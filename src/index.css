@@ -1,16 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
+@layer base {
+  body {
+    @apply antialiased;
+  }
 }
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+@layer components {
+  /* Scoped typography for Herbal Rituals detail page (AI Studio-like density) */
+  .ritualBody p.ritualP {
+    margin: 0 0 12px 0 !important;
+  }
+
+  .ritualBody p.ritualP:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .ritualBody .ritualHighlight {
+    margin-top: 16px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .ritualBody .ritualBullets {
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .ritualBody .ritualBulletsTitle {
+    margin: 0 0 12px 0 !important;
+  }
+
+  .ritualBody ul.ritualList {
+    margin: 0 !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+  }
+
+  .ritualBody li.ritualLi {
+    margin: 6px 0 !important;
+  }
+
+  .ritualBody .ritualNote {
+    margin-top: 16px !important;
+  }
+
+  /* Scoped typography for About Us long-form content (AI Studio-like density) */
+  .contentTight p {
+    margin: 0 0 12px 0 !important;
+    line-height: 1.85 !important;
+  }
+
+  .contentTight p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .contentTight ul {
+    margin: 8px 0 12px 0 !important;
+    padding-left: 1.1em !important;
+  }
+
+  .contentTight li {
+    margin: 4px 0 !important;
+    line-height: 1.85 !important;
+  }
+
+  .contentTight h3,
+  .contentTight h4 {
+    margin: 18px 0 10px 0 !important;
+  }
+}

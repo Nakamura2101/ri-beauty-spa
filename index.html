@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ri Beauty Spa | Thư giãn – Phục hồi – Yêu chiều cơ thể bạn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        scroll-behavior: smooth;
+        background-color: #fdfdfd;
+      }
+      h1, h2, h3, h4, .font-serif {
+        font-family: 'Cormorant Garamond', serif;
+      }
+      .bg-eucalyptus { background-color: #f0f4ef; }
+      .bg-soft-wood { background-color: #f7f3f0; }
+      .text-spa-green { color: #4a7c59; }
+      .text-spa-deep { color: #2d4739; }
+      .bg-spa-deep { background-color: #2d4739; }
+      .bg-spa-green { background-color: #4a7c59; }
+      .bg-spa-soft { background-color: #b8cdc0; } /* Tông xanh Sage nhạt hơn, dịu mắt hơn */
+      .bg-spa-accent { background-color: #a68b5b; } /* Muted Gold / Bronze */
+      .border-spa-light { border-color: #e0e7e1; }
+      
+      /* Sun and Moon styled transitions */
+      .fade-in-section {
+        animation: fadeIn 1.2s ease-out forwards;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body class="text-spa-deep">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

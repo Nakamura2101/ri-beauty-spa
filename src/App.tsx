@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ServiceCategory } from './types';
+import type { ServiceCategory } from './types';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NAV_ITEMS, LOGO_URL } from '../constants';
-import { ServiceCategory } from '../types';
+import type { ServiceCategory } from '../types';
 
 interface Props {
   onCategorySelect: (cat: ServiceCategory | 'about' | 'corporate') => void;

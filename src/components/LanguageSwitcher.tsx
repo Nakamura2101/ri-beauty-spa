@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Language } from '../types';
+import type { Language } from '../types';
 
 interface Props {
   current: Language;

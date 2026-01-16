@@ -40,7 +40,7 @@ export const SkinTherapyDetail: React.FC<Props> = ({ onBack }) => {
             <p className="text-[9px] uppercase tracking-[0.3em] text-spa-green/60 font-bold mt-1">MAIN TREATMENTS</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
-            {mainServices.map((article, index) => (
+            {mainServices.map((article) => (
               <div key={article.id} className="flex flex-col space-y-6 group">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-sm shadow-lg">
                   <img 
