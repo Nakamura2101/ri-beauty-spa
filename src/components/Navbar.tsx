@@ -68,7 +68,7 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-12">
-          <div className="flex space-x-10 text-[10px] uppercase tracking-[0.25em] font-bold text-spa-deep/80">
+          <div className="flex space-x-10 text-[13px] uppercase tracking-[0.25em] font-bold text-black">
             {NAV_ITEMS.map((item) => (
               <div 
                 key={item.href} 
@@ -78,11 +78,11 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
               >
                 <button 
                   onClick={() => handleNavClick(item.href)}
-                  className="hover:text-spa-green transition-colors relative flex items-center gap-1 text-left"
+                  className="hover:opacity-70 transition-opacity relative flex items-center gap-2 text-left text-black"
                 >
                   <div className="flex flex-col">
-                    <span className="text-[9px]">{item.labelEn}</span>
-                    <span className="text-[11px] tracking-widest opacity-80 font-medium normal-case">{item.labelJp}</span>
+                    <span className="text-[12px]">{item.labelEn}</span>
+                    <span className="text-[15px] tracking-widest font-medium normal-case">{item.labelJp}</span>
                   </div>
                   {item.subItems && (
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-2.5 h-2.5 opacity-40">
@@ -102,8 +102,8 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
                           className="w-full text-left px-8 py-3 hover:bg-gray-50 transition-all border-l-2 border-transparent hover:border-spa-green"
                         >
                           <div className="flex flex-col">
-                            <span className="text-[8px] uppercase tracking-[0.3em] text-spa-deep/50">{sub.labelEn}</span>
-                            <span className="text-[12px] tracking-widest text-spa-green/80 font-medium">{sub.labelJp}</span>
+                            <span className="text-[11px] uppercase tracking-[0.3em] text-black">{sub.labelEn}</span>
+                            <span className="text-[15px] tracking-widest text-black font-medium">{sub.labelJp}</span>
                           </div>
                         </button>
                       ))}
@@ -116,7 +116,7 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
         </div>
 
         {/* Mobile menu button */}
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-spa-deep p-2" aria-label="Toggle Menu">
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-black p-2" aria-label="Toggle Menu">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-8 h-8">
             <path strokeLinecap="round" strokeLinejoin="round" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} />
           </svg>
@@ -125,7 +125,7 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
 
       {/* Mobile Drawer */}
       <div className={`lg:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center transition-all duration-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
-        <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-spa-deep p-2">
+        <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-black p-2">
            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-8 h-8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -137,8 +137,10 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
                 className="flex flex-col items-center py-2 border-b border-gray-50 w-full"
                 onClick={() => handleNavClick(item.href)}
               >
-                <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-spa-deep/60">{item.labelEn}</span>
-                <span className="text-lg tracking-widest font-medium mt-1">{item.labelJp}</span>
+                <span className="flex items-center gap-2 text-[12px] uppercase tracking-[0.4em] font-bold text-black">
+                  <span>{item.labelEn}</span>
+                </span>
+                <span className="text-xl tracking-widest font-medium mt-1 text-black">{item.labelJp}</span>
               </button>
               {item.subItems && (
                 <div className="grid grid-cols-2 gap-4 mt-6 w-full">
@@ -148,8 +150,8 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
                       onClick={() => handleNavClick(item.href, sub.id)}
                       className="flex flex-col items-center p-3 bg-gray-50/50 rounded-sm"
                     >
-                      <span className="text-[8px] uppercase tracking-[0.2em] text-spa-green font-bold opacity-60">{sub.labelEn}</span>
-                      <span className="text-sm tracking-widest mt-1 font-medium">{sub.labelJp}</span>
+                      <span className="text-[11px] uppercase tracking-[0.2em] text-black font-bold">{sub.labelEn}</span>
+                      <span className="text-base tracking-widest mt-1 font-medium text-black">{sub.labelJp}</span>
                     </button>
                   ))}
                 </div>

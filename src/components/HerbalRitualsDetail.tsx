@@ -15,8 +15,8 @@ const splitLeadingEmoji = (text: string, emoji: string) => {
 };
 
 const renderBlock = (block: RitualContentBlock) => {
-  const baseText = 'text-gray-500 font-light text-[15px] md:text-[16px] leading-[1.9] tracking-[0.02em] text-left';
-  const emphasisText = 'text-gray-600 font-medium text-[15px] md:text-[16px] leading-[1.9] tracking-[0.02em] text-left';
+  const baseText = 'text-black font-light text-[15px] md:text-[16px] leading-[1.9] tracking-[0.02em] text-left';
+  const emphasisText = 'text-black font-medium text-[15px] md:text-[16px] leading-[1.9] tracking-[0.02em] text-left';
 
   switch (block.type) {
     case 'paragraph':
@@ -66,7 +66,7 @@ const renderBlock = (block: RitualContentBlock) => {
     }
     case 'note':
       return (
-        <p className="ritualNote text-gray-400 font-light leading-[1.75] tracking-[0.02em] text-[12px] md:text-[13px] text-left opacity-70">
+        <p className="ritualNote text-black font-light leading-[1.75] tracking-[0.02em] text-[12px] md:text-[13px] text-left">
           {block.text}
         </p>
       );
@@ -106,7 +106,6 @@ const renderBlock = (block: RitualContentBlock) => {
 
 const RitualSection: React.FC<{ section: HerbalRitualsSection; index: number }> = ({ section, index }) => {
   const isImageLeft = index % 2 === 0; // 01,03 image LEFT; 02,04 image RIGHT
-  const sectionLabel = `SECTION ${section.id}`;
 
   return (
     <div
@@ -130,14 +129,10 @@ const RitualSection: React.FC<{ section: HerbalRitualsSection; index: number }> 
       {/* Text Section */}
       <div className="w-full lg:w-1/2 text-left lg:pt-1">
         <div className="max-w-[560px] mx-auto lg:mx-0">
-          <span className="block text-[9px] uppercase tracking-[0.8em] text-spa-green font-bold opacity-60 mb-5">
-            {sectionLabel}
-          </span>
-
-          <h2 className="text-3xl md:text-4xl font-serif text-spa-deep leading-tight tracking-wide mb-2">
+          <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight tracking-wide mb-2">
             {section.titleJp}
           </h2>
-          <p className="text-[10px] tracking-widest text-spa-green/60 font-bold uppercase mb-4">
+          <p className="text-[10px] tracking-widest text-black font-bold uppercase mb-4">
             {section.titleEn}
           </p>
 
@@ -152,7 +147,7 @@ const RitualSection: React.FC<{ section: HerbalRitualsSection; index: number }> 
               href={SQUARE_BOOKING_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-b border-spa-deep/20 pb-2 text-[9px] uppercase tracking-[0.5em] font-bold text-spa-deep hover:text-spa-green hover:border-spa-green transition-all"
+              className="inline-block border-b border-black/20 pb-2 text-[11px] uppercase tracking-[0.5em] font-bold text-black hover:text-spa-green hover:border-spa-green transition-all"
             >
               EXPERIENCE NOW
             </a>
@@ -165,13 +160,13 @@ const RitualSection: React.FC<{ section: HerbalRitualsSection; index: number }> 
 
 export const HerbalRitualsDetail: React.FC<Props> = ({ onBack }) => {
   return (
-    <div className="min-h-screen bg-[#fdfdfb] pt-32 pb-24 animate-fadeIn">
+    <div className="min-h-screen bg-[#fdfdfb] pt-32 pb-24 animate-fadeIn text-black">
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="mb-24 flex flex-col items-center">
           <button 
             onClick={onBack}
-            className="mb-12 text-[10px] uppercase tracking-[0.4em] font-bold text-spa-green flex items-center gap-3 hover:opacity-60 transition-opacity"
+            className="mb-12 text-[12px] uppercase tracking-[0.4em] font-bold text-black flex items-center gap-3 hover:opacity-60 transition-opacity"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -180,10 +175,10 @@ export const HerbalRitualsDetail: React.FC<Props> = ({ onBack }) => {
           </button>
           
           <div className="space-y-3 text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-spa-deep italic tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-black italic tracking-tight">
               ハーブの儀式
             </h1>
-            <p className="text-[10px] tracking-[0.6em] text-spa-green/60 font-bold uppercase ml-[0.6em]">HERBAL RITUALS</p>
+            <p className="text-[12px] tracking-[0.6em] text-black font-bold uppercase ml-[0.6em]">HERBAL RITUALS</p>
           </div>
           <div className="w-12 h-px bg-spa-green/20 mt-12"></div>
         </div>
@@ -200,7 +195,7 @@ export const HerbalRitualsDetail: React.FC<Props> = ({ onBack }) => {
           <div className="w-20 h-px bg-spa-green/20 mx-auto mb-12"></div>
           <button 
             onClick={onBack}
-            className="px-16 py-6 bg-spa-deep text-white text-[10px] uppercase tracking-[0.5em] font-bold transition-all hover:bg-spa-green shadow-2xl rounded-sm"
+            className="px-16 py-6 bg-spa-deep text-white text-[11px] uppercase tracking-[0.5em] font-bold transition-all hover:bg-spa-green shadow-2xl rounded-sm"
           >
             ホームへ戻る
           </button>

@@ -73,7 +73,7 @@ const App: React.FC = () => {
 
   if (isViewingAbout) {
     return (
-      <div className="min-h-screen selection:bg-spa-green selection:text-white">
+      <div className="min-h-screen">
         <Navbar onCategorySelect={handleCategorySelect} />
         <AboutDetail onBack={closeDetails} />
         <Footer />
@@ -83,7 +83,7 @@ const App: React.FC = () => {
 
   if (isViewingCorporate) {
     return (
-      <div className="min-h-screen selection:bg-spa-green selection:text-white">
+      <div className="min-h-screen">
         <Navbar onCategorySelect={handleCategorySelect} />
         <CorporateDetail onBack={closeDetails} />
         <Footer />
@@ -93,7 +93,7 @@ const App: React.FC = () => {
 
   if (isViewingRituals) {
     return (
-      <div className="min-h-screen selection:bg-spa-green selection:text-white">
+      <div className="min-h-screen">
         <Navbar onCategorySelect={handleCategorySelect} />
         <HerbalRitualsDetail onBack={closeDetails} />
         <Footer />
@@ -103,7 +103,7 @@ const App: React.FC = () => {
 
   if (isViewingBodyCare) {
     return (
-      <div className="min-h-screen selection:bg-spa-green selection:text-white">
+      <div className="min-h-screen">
         <Navbar onCategorySelect={handleCategorySelect} />
         <BodyCareDetail onBack={closeDetails} />
         <Footer />
@@ -113,7 +113,7 @@ const App: React.FC = () => {
 
   if (isViewingSkinCare) {
     return (
-      <div className="min-h-screen selection:bg-spa-green selection:text-white">
+      <div className="min-h-screen">
         <Navbar onCategorySelect={handleCategorySelect} />
         <SkinTherapyDetail onBack={closeDetails} />
         <Footer />
@@ -122,7 +122,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen selection:bg-spa-green selection:text-white">
+    <div className="min-h-screen">
       <Navbar onCategorySelect={handleCategorySelect} />
       
       <main>

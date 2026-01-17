@@ -30,7 +30,7 @@ export const CorporateDetail: React.FC<Props> = ({ onBack }) => {
         <div className="mb-24 flex flex-col items-center text-center">
           <button 
             onClick={onBack}
-            className="mb-12 text-[10px] uppercase tracking-[0.4em] font-bold text-spa-green flex items-center gap-3 hover:opacity-60 transition-opacity"
+            className="mb-12 text-[12px] uppercase tracking-[0.4em] font-bold text-spa-green flex items-center gap-3 hover:opacity-60 transition-opacity"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -42,7 +42,7 @@ export const CorporateDetail: React.FC<Props> = ({ onBack }) => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-spa-deep italic tracking-tight">
               法人向けサービス
             </h1>
-            <p className="text-[10px] tracking-[0.6em] text-spa-green/60 font-bold uppercase ml-[0.6em]">CORPORATE SERVICES</p>
+            <p className="text-[12px] tracking-[0.6em] text-spa-green/60 font-bold uppercase ml-[0.6em]">CORPORATE SERVICES</p>
           </div>
           <div className="w-12 h-px bg-spa-green/20 mt-12"></div>
         </div>
@@ -148,7 +148,7 @@ export const CorporateDetail: React.FC<Props> = ({ onBack }) => {
           <div className="w-20 h-px bg-spa-green/20 mx-auto mb-12"></div>
           <button 
             onClick={onBack}
-            className="px-16 py-6 bg-spa-deep text-white text-[10px] uppercase tracking-[0.5em] font-bold transition-all hover:bg-spa-green shadow-2xl rounded-sm"
+            className="px-16 py-6 bg-spa-deep text-white text-[11px] uppercase tracking-[0.5em] font-bold transition-all hover:bg-spa-green shadow-2xl rounded-sm"
           >
             ホームへ戻る
           </button>

@@ -6,6 +6,17 @@
   body {
     @apply antialiased;
   }
+
+  /* Ensure selected text is always readable (blue highlight + white text) */
+  ::selection {
+    background: #4F6EEB;
+    color: #ffffff;
+  }
+
+  ::-moz-selection {
+    background: #4F6EEB;
+    color: #ffffff;
+  }
 }
 
 @layer components {

@@ -5,9 +5,9 @@ export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/3J9Y9BoVDvfHbAcY7";
 export const LOGO_URL = "https://i.postimg.cc/DzvhJFS9/324805976-1526449427857383-1970399124163669440-n-(1).png";
 
 export const HERO_IMAGES = [
-  "https://i.postimg.cc/V665QX19/RUSZ4198.jpg",
-  "https://i.postimg.cc/J7scjkJY/GFBX4590.jpg",
-  "https://i.postimg.cc/sfKkrsBk/TMUP4682.jpg"
+  "/images/home/home1.JPG",
+  "/images/home/home2.JPG",
+  "/images/home/home3.JPG"
 ];
 
 export const NAV_ITEMS = [
@@ -24,16 +24,16 @@ export const NAV_ITEMS = [
 ];
 
 export const FEATURED_POSTS: ArticleItem[] = [
-  { id: 'f1', titleEn: 'Vietnamese Traditional Massage', titleJp: 'ベトナム伝統マッサージ', content: 'ベトナム伝統の指圧とロングストロークを組み合わせた手技で、凝り固まった筋肉を深く解きほぐします。', image: 'https://i.postimg.cc/Bvc83h2h/LIZQ2957.jpg', tagEn: 'SIGNATURE', tagJp: 'シグネチャー' },
-  { id: 'f2', titleEn: 'Yomogi Steam', titleJp: 'よもぎ蒸し', content: '伝統的な方法で体内から浄化し温めます. 内側から溢れ出す活力を体感してください。', image: 'https://i.postimg.cc/x8WVHPVN/7f512228703f67fecf0f0ae41437a4a0.jpg', tagEn: 'TRADITION', tagJp: '伝統' },
-  { id: 'f3', titleEn: 'Herbal Peel', titleJp: 'ハーブピーリング', content: '希少な生薬エキスで輝く滑らかな肌へ. 肌本来の美しさを引き出す特別なケアです。', image: 'https://i.postimg.cc/VNnD9cnM/74e619c7f06b390c7dda738925a695d7.jpg', tagEn: 'RADIANCE', tagJp: '輝き' },
-  { id: 'f4', titleEn: 'Holistic Care', titleJp: 'ホリスティックケア', content: '持続可能な美しさのための心身の調和。トータルバランスを整えるケア。', image: 'https://i.postimg.cc/ydLTTh6v/RYMU3477.jpg', tagEn: 'HOLISTIC', tagJp: 'ホリスティック' }
+  { id: 'f1', titleEn: 'Vietnamese Traditional Massage', titleJp: 'ベトナム伝統マッサージ', content: 'ベトナム伝統の指圧とロングストロークを組み合わせた手技で、凝り固まった筋肉を深く解きほぐします。', image: '/images/home/VietnameseTraditionalMassage.jpg', tagEn: 'SIGNATURE', tagJp: 'シグネチャー' },
+  { id: 'f2', titleEn: 'Yomogi Steam', titleJp: 'よもぎ蒸し', content: '伝統的な方法で体内から浄化し温めます. 内側から溢れ出す活力を体感してください。', image: '/images/home/YomogiSteam.jpg', tagEn: 'TRADITION', tagJp: '伝統' },
+  { id: 'f3', titleEn: 'Herbal Peel', titleJp: 'ハーブピーリング', content: '希少な生薬エキスで輝く滑らかな肌へ. 肌本来の美しさを引き出す特別なケアです。', image: '/images/home/HerbalPeel.jpg', tagEn: 'RADIANCE', tagJp: '輝き' },
+  { id: 'f4', titleEn: 'Holistic Care', titleJp: 'ホリスティックケア', content: '持続可能な美しさのための心身の調和。トータルバランスを整えるケア。', image: '/images/home/HolisticCare.jpg', tagEn: 'HOLISTIC', tagJp: 'ホリスティック' }
 ];
 
 // Fix for HerbalRitualsDetail.tsx: Exported missing HERBAL_ARTICLES array
 export const HERBAL_ARTICLES: ArticleItem[] = [
-  { id: 'h1', titleEn: 'Vietnamese Traditional Massage', titleJp: 'ベトナム伝統マッサージ', content: '伝統的な手技で血行を促進し、深いリラックスへと導きます。', image: 'https://i.postimg.cc/Bvc83h2h/LIZQ2957.jpg' },
-  { id: 'h2', titleEn: 'Yomogi Steam', titleJp: 'よもぎ蒸し', content: '伝統的な方法で体内から浄化し温めます。内側から溢れ出す活力を体感してください。', image: 'https://i.postimg.cc/x8WVHPVN/7f512228703f67fecf0f0ae41437a4a0.jpg' }
+  { id: 'h1', titleEn: 'Vietnamese Traditional Massage', titleJp: 'ベトナム伝統マッサージ', content: '伝統的な手技で血行を促進し、深いリラックスへと導きます。', image: '/images/home/VietnameseTraditionalMassage.jpg' },
+  { id: 'h2', titleEn: 'Yomogi Steam', titleJp: 'よもぎ蒸し', content: '伝統的な方法で体内から浄化し温めます。内側から溢れ出す活力を体感してください。', image: '/images/home/YomogiSteam.jpg' }
 ];
 
 export type RitualContentBlock =
@@ -58,8 +58,7 @@ export const HERBAL_RITUALS_SECTIONS: HerbalRitualsSection[] = [
     id: '01',
     titleJp: '特製アーティチョーク・ハーブティー',
     titleEn: 'ARTICHOKE TEA',
-    // Uses a local file placed in /public/images/artichoke-tea.png
-    image: '/images/artichoke-tea.png',
+    image: '/images/herbal/ArtichokeTea.jpg',
     blocks: [
       {
         type: 'paragraph',
@@ -101,7 +100,7 @@ export const HERBAL_RITUALS_SECTIONS: HerbalRitualsSection[] = [
     id: '02',
     titleJp: 'よもぎ蒸し（Yomogi Mushi）',
     titleEn: 'YOMOGI STEAMING',
-    image: HERBAL_ARTICLES[1]?.image ?? 'https://i.postimg.cc/x8WVHPVN/7f512228703f67fecf0f0ae41437a4a0.jpg',
+    image: '/images/herbal/YomogiSteaming.jpg',
     blocks: [
       {
         type: 'highlight',
@@ -154,8 +153,7 @@ export const HERBAL_RITUALS_SECTIONS: HerbalRitualsSection[] = [
     id: '03',
     titleJp: 'アロマ（精油）のこだわり',
     titleEn: 'ESSENTIAL OILS',
-    // Uses a local file placed in /public/images/aroma.jpg
-    image: '/images/aroma.jpg',
+    image: '/images/herbal/EssentialOils.jpg',
     blocks: [
       {
         type: 'paragraph',
@@ -203,8 +201,7 @@ export const HERBAL_RITUALS_SECTIONS: HerbalRitualsSection[] = [
     id: '04',
     titleJp: 'ハーブの香り — 心安らぐひととき',
     titleEn: 'HERBAL SCENT',
-    // Uses a local file placed in /public/images/HERBAL.jpg
-    image: '/images/HERBAL.jpg',
+    image: '/images/herbal/HerbalScent.jpg',
     blocks: [
       {
         type: 'paragraph',
@@ -277,7 +274,7 @@ export const BODY_WELLNESS_MAIN_THERAPIES: BodyWellnessMainTherapy[] = [
     tag: 'BODY',
     titleJp: 'フットケア',
     subtitleEn: 'FOOT CARE',
-    imageSrc: 'https://i.postimg.cc/J7scjkJY/GFBX4590.jpg',
+    imageSrc: '/images/body/footcare.JPG',
     description: [
       '「第二の心臓」と呼ばれる足を丁寧にケアします。',
       '立ち仕事や歩き疲れで重くなった足を、専門の技術でほぐしていきます。',
@@ -292,7 +289,7 @@ export const BODY_WELLNESS_MAIN_THERAPIES: BodyWellnessMainTherapy[] = [
     tag: 'TRADITION',
     titleJp: 'ベトナム伝統ボディトリートメント（オイル）',
     subtitleEn: 'VIETNAMESE TRADITIONAL',
-    imageSrc: 'https://i.postimg.cc/Bvc83h2h/LIZQ2957.jpg',
+    imageSrc: '/images/body/vietnamtradition.jpg',
     description: [
       'ベトナムに古くから伝わる伝統的な技法を用いた、全身オイルトリートメントです。',
       '指圧とロングストロークを組み合わせた独特の手技により、筋肉の深層部まで働きかけ、',
@@ -308,7 +305,7 @@ export const BODY_WELLNESS_MAIN_THERAPIES: BodyWellnessMainTherapy[] = [
     tag: 'ENERGY',
     titleJp: 'ホットストーン・エナジーアップトリートメント',
     subtitleEn: 'HOT STONE THERAPY',
-    imageSrc: 'https://i.postimg.cc/sfKkrsBk/TMUP4682.jpg',
+    imageSrc: '/images/body/HotStoneTherapy.JPG',
     description: [
       '温められた天然の火山石（ホットストーン）を使用した贅沢なケアです。',
       '石から発せられる熱が筋肉の深部まで浸透し、慢性的な疲れや冷えを解消します。',
@@ -322,7 +319,7 @@ export const BODY_WELLNESS_MAIN_THERAPIES: BodyWellnessMainTherapy[] = [
     tag: 'DETOX',
     titleJp: 'アロマリンパトリートメント',
     subtitleEn: 'LYMPHATIC DRAINAGE',
-    imageSrc: 'https://i.postimg.cc/ydLTTh6v/RYMU3477.jpg',
+    imageSrc: '/images/body/LymphaticDrainage.JPG',
     description: [
       'リンパの流れを整える優しいタッチのトリートメントです。',
       '体内に滞った余分な水分や老廃物の排出を促すデトックスに重点を置いています。',
@@ -339,92 +336,196 @@ export const BODY_WELLNESS_ADDITIONAL_OPTIONS: BodyWellnessOption[] = [
     id: 'bw-opt-01',
     titleJp: 'ヒップアップケア（30分）',
     subtitleEn: 'HIP UP CARE (30 MIN)',
-    imageSrc: 'https://i.postimg.cc/sfKkrsBk/TMUP4682.jpg',
+    imageSrc: '/images/body/hipupcare.jpg',
     descriptionShort: 'ヒップラインを整え、上向きのシルエットを目指す集中ケアです。'
   },
   {
     id: 'bw-opt-02',
     titleJp: 'ウエストケア（30分）',
     subtitleEn: 'WAIST CARE (30 MIN)',
-    imageSrc: 'https://i.postimg.cc/J7scjkJY/GFBX4590.jpg',
+    imageSrc: '/images/body/waistcare.jpg',
     descriptionShort: '気になるウエスト周りにアプローチし、スッキリとしたラインをサポート。'
   },
   {
     id: 'bw-opt-03',
     titleJp: '遠赤外線ヒートケア（20分）',
     subtitleEn: 'FAR INFRARED HEAT (20 MIN)',
-    imageSrc: 'https://i.postimg.cc/ydLTTh6v/RYMU3477.jpg',
+    imageSrc: '/images/body/FarInfraredheat.jpg',
     descriptionShort: '遠赤外線の熱で体の芯から温め、代謝を促しリラックスさせます。'
   },
   {
     id: 'bw-opt-04',
     titleJp: 'ホットストーン（15分）',
     subtitleEn: 'HOT STONE MINI (15 MIN)',
-    imageSrc: 'https://i.postimg.cc/sfKkrsBk/TMUP4682.jpg',
+    imageSrc: '/images/body/Hotstonemini.jpg',
     descriptionShort: '温めた石の熱で筋肉を緩める、短い時間でも効果的な温感ケアです。'
   },
   {
     id: 'bw-opt-05',
     titleJp: 'よもぎ温熱ケア（20分）',
     subtitleEn: 'YOMOGI THERMAL CARE (20 MIN)',
-    imageSrc: 'https://i.postimg.cc/x8WVHPVN/7f512228703f67fecf0f0ae41437a4a0.jpg',
+    imageSrc: '/images/body/yomogithremailcare.jpg',
     descriptionShort: 'よもぎの成分を活かした温熱ケアで、冷えやすい部分を集中して温めます。'
   },
   {
     id: 'bw-opt-06',
     titleJp: 'ハーブ温熱パック（20分）',
     subtitleEn: 'HERBAL THERMAL PACK (20 MIN)',
-    imageSrc: 'https://i.postimg.cc/Bvc83h2h/LIZQ2957.jpg',
+    imageSrc: '/images/body/herbalthermailpack.jpg',
     descriptionShort: '厳選されたハーブを使用した温かいパックで、じんわりと癒やします。'
   },
   {
     id: 'bw-opt-07',
     titleJp: 'ハイパーナイフ（15分）',
     subtitleEn: 'HYPER KNIFE BODY (15 MIN)',
-    imageSrc: 'https://i.postimg.cc/DfG42dLr/QPSF7611.jpg',
+    imageSrc: '/images/body/hyperknifebody.jpg',
     descriptionShort: '高周波マシンで効率よく温め、部分的なコリや引き締めにアプローチ。'
   },
   {
     id: 'bw-opt-08',
     titleJp: '首・肩ほぐし（15分）',
     subtitleEn: 'NECK & SHOULDER (15 MIN)',
-    imageSrc: 'https://i.postimg.cc/J7scjkJY/GFBX4590.jpg',
+    imageSrc: '/images/body/neckshoulder.jpg',
     descriptionShort: '短時間で首から肩の緊張をピンポイントで解きほぐします。'
   },
   {
     id: 'bw-opt-09',
     titleJp: '首・肩ほぐし（30分）',
     subtitleEn: 'NECK & SHOULDER (30 MIN)',
-    imageSrc: 'https://i.postimg.cc/ydLTTh6v/RYMU3477.jpg',
+    imageSrc: '/images/body/neckshoulder.jpg',
     descriptionShort: '頑固な首・肩のコリをじっくりと時間をかけて丁寧にケアします。'
   },
   {
     id: 'bw-opt-10',
     titleJp: 'ハンド・腕ケア（15分）',
     subtitleEn: 'HAND & ARM CARE (15 MIN)',
-    imageSrc: 'https://i.postimg.cc/sfKkrsBk/TMUP4682.jpg',
+    imageSrc: '/images/body/handarmcare.jpg',
     descriptionShort: '指先から腕にかけての疲れを癒やし、PC作業などの疲労を緩和します。'
   },
   {
     id: 'bw-opt-11',
     titleJp: 'ドライヘッドスパ（15分）',
     subtitleEn: 'DRY HEAD SPA (15 MIN)',
-    imageSrc: 'https://i.postimg.cc/V665QX19/RUSZ4198.jpg',
+    imageSrc: '/images/body/dryheadspa.jpg',
     descriptionShort: '水を使わず頭皮をほぐし、眼精疲労や睡眠の質の向上をサポートします。'
   },
   {
     id: 'bw-opt-12',
     titleJp: 'バストケア（30分）',
     subtitleEn: 'BUST CARE (30 MIN)',
-    imageSrc: 'https://i.postimg.cc/J7scjkJY/GFBX4590.jpg',
+    imageSrc: '/images/body/bustcare.jpg',
     descriptionShort: '女性らしいラインを保つための、優しく丁寧なバスト周辺のケアです。'
   }
 ];
 
-// Fix for SkinTherapyDetail.tsx: Exported missing SKIN_CARE_ARTICLES array
+// Skin Therapy (スキンケア)
+// NOTE: Titles must match the AI Studio build; do not change copy without updating the reference.
+export const SKIN_CARE_MAIN_TREATMENTS: ArticleItem[] = [
+  {
+    id: 'skin-main-01',
+    titleJp: 'ベーシックフェイシャル（クレンジング＆保湿）',
+    titleEn: 'Basic Facial',
+    content: '肌の基礎を整えるスタンダードなケアです. 丁寧なクレンジングで毛穴の汚れを落とし、たっぷりの保湿成分を浸透させることで、みずみずしく健やかな肌へと導きます.',
+    image: '/images/SKINTHERAPY/BasicFacial.jpg',
+    tagEn: 'BASIC'
+  },
+  {
+    id: 'skin-main-02',
+    titleJp: 'ハーブピーリング（ツヤ肌コース）',
+    titleEn: 'Radiant Glow Peel',
+    content: '天然由来 of ハーブ成分を使用し、肌のターンオーバーをサポートします. くすみが気になる方や、内側から発光するようなツヤ肌を目指す方に最適なコースです.',
+    image: '/images/SKINTHERAPY/RadiantGlowPeel.jpg',
+    tagEn: 'HERBAL PEEL'
+  },
+  {
+    id: 'skin-main-03',
+    titleJp: 'ハーブピーリング（ニキビ肌ケアコース）',
+    titleEn: 'Acne Care Peel',
+    content: 'トラブルの起きやすい肌を鎮静させ, 健やかな状態へと整えます. ニキビ跡や肌荒れにお悩みの方へ寄り添う, 専門的なスキンケアコースです.',
+    image: '/images/SKINTHERAPY/AcneCarePeel.jpg',
+    tagEn: 'HERBAL PEEL'
+  },
+  {
+    id: 'skin-main-04',
+    titleJp: 'ボディ・リニューアル・ハーブピーリング（背中・ヒップ・二の腕・脇ケア）',
+    titleEn: 'Body Renewal Herbal Peel',
+    content: '頑固な背中ニキビや、ヒップ・二の腕・脇の黒ずみを集中ケア. 生薬の力で肌のターンオーバー को 強力にサポートし、炎症を鎮めながら、透明感のある滑らかな肌へと再生を促します. 露出の多い季節や、自分では届きにくい部位の徹底ケアに.',
+    image: '/images/SKINTHERAPY/BodyRenewalHerbalPeel.png',
+    tagEn: 'HERBAL PEEL'
+  },
+  {
+    id: 'skin-main-05',
+    titleJp: 'ハイパーナイフ フェイスケア（フェイスライン温感ケア）',
+    titleEn: 'Hyper Knife Face Care',
+    content: '高周波マシンを使用した温感トリートメントです. お顔のコリをほぐし、むくみをスッキリさせることで、シャープなフェイスラインとリフトアップを目指します.',
+    image: '/images/SKINTHERAPY/HyperKnifeFaceCare(15phut).jpg',
+    tagEn: 'MACHINE'
+  },
+  {
+    id: 'skin-main-06',
+    titleJp: 'ブライトニングケア（透明感サポート）',
+    titleEn: 'Brightening Therapy',
+    content: '紫外線ダメージや乾燥によるくすみにアプローチ. 透明感のある明るい印象の肌へと導く、贅沢なホワイトニング・サポートケアです.',
+    image: '/images/SKINTHERAPY/BrighteningTherapy.jpg',
+    tagEn: 'TARGETED'
+  },
+  {
+    id: 'skin-main-07',
+    titleJp: '毛穴ケア（ディープクレンジング）',
+    titleEn: 'Deep Pore Cleansing',
+    content: '日々の洗顔では落としきれない毛穴의 奥の汚れを徹底洗浄. 肌を滑らかにし、美容成分の浸透を助けるクリーンな土台を作ります.',
+    image: '/images/SKINTHERAPY/DeepPoreCleansing.jpg',
+    tagEn: 'TARGETED'
+  },
+  {
+    id: 'skin-main-08',
+    titleJp: '毛穴集中ケア（角栓・皮脂ケア）',
+    titleEn: 'Intensive Sebum Care',
+    content: 'Ｔゾーンの黒ずみや角栓が気になる方への集中プログラム. 皮脂バランスを整え、引き締まった毛穴と滑らかな手触りの鼻周りへと整えます.',
+    image: '/images/SKINTHERAPY/IntensiveSebumCare.jpg',
+    tagEn: 'TARGETED'
+  }
+];
+
+export const SKIN_CARE_OPTIONS: ArticleItem[] = [
+  {
+    id: 'skin-opt-01',
+    titleJp: 'デコルテケア（首・肩まわり）',
+    titleEn: 'Decollete Care',
+    content: 'フェイシャルと合わせることで, リンパの流れ को さらに促進. 首からデコルテにかけての緊張をほぐし, 顔色のトーンアップも期待できます.',
+    image: '/images/SKINTHERAPY/DecolleteCare.jpg',
+    tagEn: 'OPTION'
+  },
+  {
+    id: 'skin-opt-02',
+    titleJp: '保湿パック（集中うるおい）',
+    titleEn: 'Intensive Hydrating Pack',
+    content: '特に乾燥が気になる時の集中チャージ. 高濃度の保湿成分 को 配合したパックで, 施術後の肌にさらなる弾力 và 潤いを与えます.',
+    image: '/images/SKINTHERAPY/IntensiveHydratingPack.jpg',
+    tagEn: 'OPTION'
+  },
+  {
+    id: 'skin-opt-03',
+    titleJp: 'ヘッドケア（頭皮リフレッシュ）',
+    titleEn: 'Scalp Refresh Care',
+    content: '頭部のツボを刺激することで, 眼精疲労や頭の重さを解消. 最後にプラスすることで, 心身ともに深いリフレッシュ感を味わえます.',
+    image: '/images/SKINTHERAPY/ScalpRefreshCare.jpg',
+    tagEn: 'OPTION'
+  },
+  {
+    id: 'skin-opt-04',
+    titleJp: 'ハイパーナイフ15分｜リフトアップ＆フェイスラインケア',
+    titleEn: 'Hyper Knife Face Care (15 min)',
+    content: '高周波マシンで顔のコリをほぐし、むくみをスッキリ解消。シャープなフェイスラインへ.',
+    image: '/images/SKINTHERAPY/HyperKnifeFaceCare(15phut).jpg',
+    tagEn: 'OPTION'
+  }
+];
+
+// Back-compat export (do not filter/slice in components)
 export const SKIN_CARE_ARTICLES: ArticleItem[] = [
-  { id: 's1', titleEn: 'Herbal Peeling', titleJp: 'ハーブピーリング', content: '希少な生薬エキスで輝く滑らかな肌へ。', image: 'https://i.postimg.cc/VNnD9cnM/74e619c7f06b390c7dda738925a695d7.jpg' },
-  { id: 's2', titleEn: 'Signature Facial', titleJp: 'フェイシャルケア', content: '肌本来の美しさを引き出す特別なケア。', image: 'https://i.postimg.cc/DfG42dLr/QPSF7611.jpg', tagEn: 'OPTION', tagJp: 'オプション' }
+  ...SKIN_CARE_MAIN_TREATMENTS,
+  ...SKIN_CARE_OPTIONS
 ];
 
 // Fix for multiple components: Added missing properties aboutTitleEn, servicesTitleEn, bookingTitleEn, qrCodeLabel, contactTitleJp, viewMap
