@@ -15,9 +15,9 @@ export const NAV_ITEMS = [
   { 
     labelEn: 'SERVICES', labelJp: 'サービス', href: '#personal-services',
     subItems: [
-      { id: 'rituals', labelEn: 'HERBAL RITUALS', labelJp: 'ハーブの儀式' },
       { id: 'body', labelEn: 'BODY WELLNESS', labelJp: 'ボディケア' },
       { id: 'skin', labelEn: 'SKIN THERAPY', labelJp: 'スキンケア' },
+      { id: 'rituals', labelEn: 'HERBAL RITUALS', labelJp: 'ハーブの儀式' },
     ]
   },
   { labelEn: 'CORPORATE', labelJp: '法人向け', href: '#corporate-services' },
