@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { NAV_ITEMS, LOGO_URL } from '../constants';
-import type { ServiceCategory } from '../types';
 
-interface Props {
-  onCategorySelect: (cat: ServiceCategory | 'about' | 'corporate') => void;
-}
-
-export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
+export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -19,14 +15,7 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href: string, catId?: string) => {
-    if (catId) {
-      onCategorySelect(catId as ServiceCategory);
-    } else if (href === '#about') {
-      onCategorySelect('about');
-    } else if (href === '#corporate-services') {
-      onCategorySelect('corporate');
-    }
+  const closeMenu = () => {
     setIsMenuOpen(false);
     setActiveDropdown(null);
   };
@@ -35,7 +24,7 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled ? 'bg-white/95 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-6 md:py-8'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Section */}
-        <a href="#home" onClick={() => handleNavClick('#home')} className="flex items-center gap-3 group">
+        <Link to="/" onClick={closeMenu} className="flex items-center gap-3 group">
           {/* Official Image Logo Replacement */}
           <div className="h-12 w-12 md:h-16 md:w-16 flex items-center justify-center overflow-hidden">
             <img 
@@ -64,7 +53,7 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
               SPA & WELLNESS
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-12">
@@ -76,8 +65,9 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
                 onMouseEnter={() => item.subItems && setActiveDropdown(item.href)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button 
-                  onClick={() => handleNavClick(item.href)}
+                <NavLink
+                  to={item.href}
+                  onClick={closeMenu}
                   className="hover:opacity-70 transition-opacity relative flex items-center gap-2 text-left text-black"
                 >
                   <div className="flex flex-col">
@@ -89,23 +79,24 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                     </svg>
                   )}
-                </button>
+                </NavLink>
 
                 {/* Dropdown Menu */}
                 {item.subItems && (
                   <div className={`absolute left-0 top-full pt-4 transition-all duration-300 ${activeDropdown === item.href ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                     <div className="bg-white shadow-2xl border border-gray-50 py-4 min-w-[260px] rounded-sm">
                       {item.subItems.map((sub) => (
-                        <button
+                        <NavLink
                           key={sub.id}
-                          onClick={() => handleNavClick(item.href, sub.id)}
-                          className="w-full text-left px-8 py-3 hover:bg-gray-50 transition-all border-l-2 border-transparent hover:border-spa-green"
+                          to={sub.href}
+                          onClick={closeMenu}
+                          className="block w-full text-left px-8 py-3 hover:bg-gray-50 transition-all border-l-2 border-transparent hover:border-spa-green"
                         >
                           <div className="flex flex-col">
                             <span className="text-[11px] uppercase tracking-[0.3em] text-black">{sub.labelEn}</span>
                             <span className="text-[15px] tracking-widest text-black font-medium">{sub.labelJp}</span>
                           </div>
-                        </button>
+                        </NavLink>
                       ))}
                     </div>
                   </div>
@@ -133,26 +124,28 @@ export const Navbar: React.FC<Props> = ({ onCategorySelect }) => {
         <div className="flex flex-col items-center space-y-12 w-full px-12">
           {NAV_ITEMS.map((item) => (
             <div key={item.href} className="flex flex-col items-center w-full">
-              <button 
+              <NavLink
                 className="flex flex-col items-center py-2 border-b border-gray-50 w-full"
-                onClick={() => handleNavClick(item.href)}
+                to={item.href}
+                onClick={closeMenu}
               >
                 <span className="flex items-center gap-2 text-[12px] uppercase tracking-[0.4em] font-bold text-black">
                   <span>{item.labelEn}</span>
                 </span>
                 <span className="text-xl tracking-widest font-medium mt-1 text-black">{item.labelJp}</span>
-              </button>
+              </NavLink>
               {item.subItems && (
                 <div className="grid grid-cols-2 gap-4 mt-6 w-full">
                   {item.subItems.map(sub => (
-                    <button 
-                      key={sub.id} 
-                      onClick={() => handleNavClick(item.href, sub.id)}
+                    <NavLink
+                      key={sub.id}
+                      to={sub.href}
+                      onClick={closeMenu}
                       className="flex flex-col items-center p-3 bg-gray-50/50 rounded-sm"
                     >
                       <span className="text-[11px] uppercase tracking-[0.2em] text-black font-bold">{sub.labelEn}</span>
                       <span className="text-base tracking-widest mt-1 font-medium text-black">{sub.labelJp}</span>
-                    </button>
+                    </NavLink>
                   ))}
                 </div>
               )}

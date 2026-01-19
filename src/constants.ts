@@ -11,16 +11,16 @@ export const HERO_IMAGES = [
 ];
 
 export const NAV_ITEMS = [
-  { labelEn: 'ABOUT US', labelJp: '私たちについて', href: '#about' },
+  { labelEn: 'ABOUT US', labelJp: '私たちについて', href: '/about' },
   { 
-    labelEn: 'SERVICES', labelJp: 'サービス', href: '#personal-services',
+    labelEn: 'SERVICES', labelJp: 'サービス', href: '/services',
     subItems: [
-      { id: 'body', labelEn: 'BODY WELLNESS', labelJp: 'ボディケア' },
-      { id: 'skin', labelEn: 'SKIN THERAPY', labelJp: 'スキンケア' },
-      { id: 'rituals', labelEn: 'HERBAL RITUALS', labelJp: 'ハーブの儀式' },
+      { id: 'body', labelEn: 'BODY WELLNESS', labelJp: 'ボディケア', href: '/services/body-wellness' },
+      { id: 'skin', labelEn: 'SKIN THERAPY', labelJp: 'スキンケア', href: '/services/skin-therapy' },
+      { id: 'rituals', labelEn: 'HERBAL RITUALS', labelJp: 'ハーブの儀式', href: '/services/herbal-rituals' },
     ]
   },
-  { labelEn: 'CORPORATE', labelJp: '法人向け', href: '#corporate-services' },
+  { labelEn: 'CORPORATE', labelJp: '法人向け', href: '/corporate' },
 ];
 
 export const FEATURED_POSTS: ArticleItem[] = [
