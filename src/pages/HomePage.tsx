@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Seo } from '../components/Seo';
 import { Hero } from '../components/Hero';
 import { About } from '../components/About';
 import { Services } from '../components/Services';
@@ -11,12 +12,18 @@ export const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <main>
-      <Hero />
+    <>
+      <Seo
+        title="Ri Beauty Spa & Wellness｜川崎のリラクゼーションスパ"
+        description="川崎にあるRi Beauty Spa & Wellness。フェイシャル、ボディ、ハーブ療法で心と身体を整える上質なスパ体験。"
+      />
 
-      <About onReadMore={() => navigate('/about')} />
+      <main>
+        <Hero />
 
-      <Services />
+        <About onReadMore={() => navigate('/about')} />
+
+        <Services />
 
       {/* Corporate Services Section with Background Image */}
       <section id="corporate-services" className="relative py-24 md:py-40 overflow-hidden border-y border-gray-50">
@@ -52,8 +59,8 @@ export const HomePage: React.FC = () => {
       <Booking />
       <Contact />
 
-      {/* Disclaimer Section */}
-      <section className="relative py-20 bg-[#fafafa] border-t border-gray-100 overflow-hidden">
+        {/* Disclaimer Section */}
+        <section className="relative py-20 bg-[#fafafa] border-t border-gray-100 overflow-hidden">
         {/* Faint Logo Watermark Background */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
           <img src={LOGO_URL} alt="" className="w-full max-w-4xl h-auto object-contain grayscale" />
@@ -78,7 +85,8 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { Navbar } from './components/Navbar';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -8,6 +8,7 @@ import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { CorporatePage } from './pages/CorporatePage';
+import { ServicesPage } from './pages/ServicesPage';
 import { BodyWellnessPage } from './pages/BodyWellnessPage';
 import { SkinTherapyPage } from './pages/SkinTherapyPage';
 import { HerbalRitualsPage } from './pages/HerbalRitualsPage';
@@ -25,7 +26,7 @@ const App: React.FC = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/corporate" element={<CorporatePage />} />
 
-        <Route path="/services" element={<Navigate to="/services/body-wellness" replace />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/body-wellness" element={<BodyWellnessPage />} />
         <Route path="/services/skin-therapy" element={<SkinTherapyPage />} />
         <Route path="/services/herbal-rituals" element={<HerbalRitualsPage />} />
