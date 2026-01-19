@@ -11,6 +11,7 @@ import { CorporatePage } from './pages/CorporatePage';
 import { BodyWellnessPage } from './pages/BodyWellnessPage';
 import { SkinTherapyPage } from './pages/SkinTherapyPage';
 import { HerbalRitualsPage } from './pages/HerbalRitualsPage';
+import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 const App: React.FC = () => {
@@ -28,6 +29,8 @@ const App: React.FC = () => {
         <Route path="/services/body-wellness" element={<BodyWellnessPage />} />
         <Route path="/services/skin-therapy" element={<SkinTherapyPage />} />
         <Route path="/services/herbal-rituals" element={<HerbalRitualsPage />} />
+
+        <Route path="/contact" element={<ContactPage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

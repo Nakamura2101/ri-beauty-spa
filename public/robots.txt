@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://www.ri-beauty-spa.com/sitemap.xml
