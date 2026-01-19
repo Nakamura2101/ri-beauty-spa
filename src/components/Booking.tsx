@@ -12,7 +12,7 @@ export const Booking: React.FC = () => {
             {/* Background Image Layer */}
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://i.postimg.cc/V665QX19/RUSZ4198.jpg" 
+                src="/images/booking-bg.jpg" 
                 alt="Reservation Background" 
                 className="w-full h-full object-cover"
               />

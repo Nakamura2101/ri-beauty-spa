@@ -2,7 +2,7 @@ import type { ArticleItem } from './types';
 
 export const SQUARE_BOOKING_LINK = "https://ribeautyspa.square.site/";
 export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/3J9Y9BoVDvfHbAcY7";
-export const LOGO_URL = "https://i.postimg.cc/DzvhJFS9/324805976-1526449427857383-1970399124163669440-n-(1).png";
+export const LOGO_URL = "/images/logo.png";
 
 export const HERO_IMAGES = [
   "/images/home/home1.JPG",
@@ -245,8 +245,8 @@ export const HERBAL_RITUALS_SECTIONS: HerbalRitualsSection[] = [
 
 // Fix for BodyCareDetail.tsx: Exported missing BODY_CARE_ARTICLES array
 export const BODY_CARE_ARTICLES: ArticleItem[] = [
-  { id: 'b1', titleEn: 'Body Wellness Massage', titleJp: 'ボディマッサージ', content: '凝り固まった筋肉を深く解きほぐします。', image: 'https://i.postimg.cc/J7scjkJY/GFBX4590.jpg' },
-  { id: 'b2', titleEn: 'Hot Stone Therapy', titleJp: 'ストーンセラピー', content: '温めた石で身体の深部からリラックス。', image: 'https://i.postimg.cc/sfKkrsBk/TMUP4682.jpg', tagEn: 'OPTION', tagJp: 'オプション' }
+  { id: 'b1', titleEn: 'Body Wellness Massage', titleJp: 'ボディマッサージ', content: '凝り固まった筋肉を深く解きほぐします。', image: '/images/home/home2.JPG' },
+  { id: 'b2', titleEn: 'Hot Stone Therapy', titleJp: 'ストーンセラピー', content: '温めた石で身体の深部からリラックス。', image: '/images/home/home3.JPG', tagEn: 'OPTION', tagJp: 'オプション' }
 ];
 
 export type BodyWellnessMainTherapy = {

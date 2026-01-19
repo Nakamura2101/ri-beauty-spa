@@ -135,7 +135,7 @@ const App: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://i.postimg.cc/90GtcWbk/E68C89E691A9-sun-and-moon.jpg" 
+              src="/images/corporate-bg.jpg" 
               alt="Corporate background" 
               className="w-full h-full object-cover"
             />
