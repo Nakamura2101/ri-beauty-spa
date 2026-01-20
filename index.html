@@ -4,6 +4,18 @@
     <!-- Basic -->
     <meta charset="UTF-8" />
 
+    <!-- GitHub Pages SPA deep-link restore (must run before the app loads) -->
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect.replace(location.origin, ''));
+        }
+      })();
+    </script>
+
     <!-- Google Search Console verify -->
     <meta
       name="google-site-verification"
