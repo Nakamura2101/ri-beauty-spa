@@ -1,132 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <!-- Basic -->
-    <meta charset="UTF-8" />
-
-    <!-- GitHub Pages SPA deep-link restore (must run before the app loads) -->
-    <script>
-      (function () {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect.replace(location.origin, ''));
-        }
-      })();
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="robots" content="noindex" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Redirecting…</title>
+      <script>
+        sessionStorage.redirect = location.href;
+        location.replace('/');
+      </script>
+    </head>
+    <body></body>
+  </html>
     </script>
-
-    <!-- Google Search Console verify -->
-    <meta
-      name="google-site-verification"
-      content="DAtw4oxPFEFPUuxT_VacKiaU2mRGvhVKXqjVeZwVbLs"
-    />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Title (SEO – rất quan trọng) -->
-    <title>
-      Ri Beauty Spa & Wellness｜川崎のリラクゼーションスパ・フェイシャル＆ボディケア
-    </title>
-
-    <!-- Meta Description (Google hiển thị) -->
-    <meta
-      name="description"
-      content="川崎にあるRi Beauty Spa & Wellness。フェイシャル、ボディトリートメント、リラクゼーションで心と身体を整える上質なスパ体験をご提供します。英語対応可。"
-    />
-
-    <!-- SEO Keywords (không quá quan trọng but still should have) -->
-    <meta
-      name="keywords"
-      content="川崎 スパ, 川崎 マッサージ, 川崎 フェイシャル, リラクゼーション 川崎, spa in kawasaki, massage kawasaki, wellness spa japan"
-    />
-
-    <!-- Language -->
-    <meta http-equiv="content-language" content="ja,en" />
-
-    <!-- Open Graph (Facebook / SNS) -->
-    <meta property="og:title" content="Ri Beauty Spa & Wellness｜川崎のリラクゼーションスパ" />
-    <meta
-      property="og:description"
-      content="上質なフェイシャル・ボディケアで心と身体を整える川崎のスパ。英語対応可。"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.ri-beauty-spa.com/" />
-    <meta
-      property="og:image"
-      content="https://www.ri-beauty-spa.com/images/logo.png"
-    />
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.ri-beauty-spa.com/" />
-
-    <!-- Local Business structured data (JSON-LD) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "DaySpa",
-        "@id": "https://www.ri-beauty-spa.com/#day-spa",
-        "name": "Ri Beauty Spa & Wellness",
-        "url": "https://www.ri-beauty-spa.com/",
-        "telephone": "070-4790-6868",
-        "image": "https://www.ri-beauty-spa.com/images/logo.png",
-        "keywords": "Spa, Massage, Wellness",
-        "availableLanguage": ["Japanese", "English"],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "神奈川県川崎市幸区南幸町2-10-12",
-          "addressLocality": "川崎市",
-          "addressRegion": "神奈川県",
-          "addressCountry": "JP"
-        },
-        "areaServed": "Kawasaki, Kanagawa, Japan"
-      }
-    </script>
-
-    <!-- Icon -->
-    <link rel="icon" type="image/png" href="/images/logo.png" />
-    <link rel="apple-touch-icon" href="/images/logo.png" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Style -->
-    <style>
-      body {
-        font-family: 'Montserrat', sans-serif;
-        scroll-behavior: smooth;
-        background-color: #fdfdfd;
-      }
-      h1, h2, h3, h4, .font-serif {
-        font-family: 'Cormorant Garamond', serif;
-      }
-      .text-spa-green { color: #4a7c59; }
-      .text-spa-deep { color: #2d4739; }
-      .bg-spa-deep { background-color: #2d4739; }
-    </style>
-
-    <!-- React import map -->
-    <script type="importmap">
-      {
-        "imports": {
-          "react": "https://esm.sh/react@^19.2.3",
-          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-          "react/": "https://esm.sh/react@^19.2.3/"
-        }
-      }
-    </script>
-  </head>
-
-  <body class="text-spa-deep">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
