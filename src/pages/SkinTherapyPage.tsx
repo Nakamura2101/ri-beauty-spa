@@ -11,9 +11,10 @@ export const SkinTherapyPage: React.FC = () => {
       <Seo
         title="スキンセラピー｜Ri Beauty Spa & Wellness 川崎"
         description="フェイシャルを中心としたスキンケアメニュー。肌状態に合わせた丁寧なケアで、健やかな素肌へ導きます。"
+        canonicalPath="/services/skin-therapy/"
       />
 
-      <SkinTherapyDetail onBack={() => navigate('/')} />
+      <SkinTherapyDetail onBack={() => navigate('/services/')} />
     </>
   );
 };

@@ -11,9 +11,10 @@ export const BodyWellnessPage: React.FC = () => {
       <Seo
         title="ボディウェルネス｜Ri Beauty Spa & Wellness 川崎"
         description="ボディケアで巡りとバランスを整えるトリートメント。川崎のRi Beauty Spa & Wellnessで深いリラクゼーションを。"
+        canonicalPath="/services/body-wellness/"
       />
 
-      <BodyCareDetail onBack={() => navigate('/')} />
+      <BodyCareDetail onBack={() => navigate('/services/')} />
     </>
   );
 };

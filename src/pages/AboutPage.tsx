@@ -11,6 +11,7 @@ export const AboutPage: React.FC = () => {
       <Seo
         title="当サロンについて｜Ri Beauty Spa & Wellness 川崎"
         description="Ri Beauty Spa & Wellnessのコンセプトやこだわりをご紹介。川崎で心身を整える上質なリラクゼーション体験をお届けします。"
+        canonicalPath="/about/"
       />
 
       <AboutDetail onBack={() => navigate('/')} />

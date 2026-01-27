@@ -11,6 +11,7 @@ export const CorporatePage: React.FC = () => {
       <Seo
         title="法人・団体のご利用｜Ri Beauty Spa & Wellness 川崎"
         description="法人・団体向けのご利用案内。福利厚生やイベント、ペア・グループでのスパ体験など、お気軽にご相談ください。"
+        canonicalPath="/corporate/"
       />
 
       <CorporateDetail onBack={() => navigate('/')} />

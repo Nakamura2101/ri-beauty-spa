@@ -16,12 +16,13 @@ export const HomePage: React.FC = () => {
       <Seo
         title="Ri Beauty Spa & Wellness｜川崎のリラクゼーションスパ"
         description="川崎にあるRi Beauty Spa & Wellness。フェイシャル、ボディ、ハーブ療法で心と身体を整える上質なスパ体験。"
+        canonicalPath="/"
       />
 
       <main>
         <Hero />
 
-        <About onReadMore={() => navigate('/about')} />
+        <About onReadMore={() => navigate('/about/')} />
 
         <Services />
 
@@ -48,7 +49,7 @@ export const HomePage: React.FC = () => {
           </div>
           <div className="w-12 h-px bg-spa-green/20 mx-auto mb-10"></div>
           <button
-            onClick={() => navigate('/corporate')}
+            onClick={() => navigate('/corporate/')}
             className="inline-block px-14 py-6 bg-spa-accent text-white text-[11px] uppercase tracking-[0.5em] font-bold transition-all hover:brightness-110 shadow-xl hover:shadow-2xl rounded-sm"
           >
             法人向けお問い合わせ

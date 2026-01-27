@@ -1,5 +1,8 @@
 import type { ArticleItem } from './types';
 
+// Public canonical origin (used for SEO canonical URLs)
+export const SITE_ORIGIN = 'https://www.ri-beauty-spa.com';
+
 export const SQUARE_BOOKING_LINK = "https://ribeautyspa.square.site/";
 export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/3J9Y9BoVDvfHbAcY7";
 export const LOGO_URL = "/images/logo.png";
@@ -11,16 +14,16 @@ export const HERO_IMAGES = [
 ];
 
 export const NAV_ITEMS = [
-  { labelEn: 'ABOUT US', labelJp: '私たちについて', href: '/about' },
+  { labelEn: 'ABOUT US', labelJp: '私たちについて', href: '/about/' },
   { 
-    labelEn: 'SERVICES', labelJp: 'サービス', href: '/services',
+    labelEn: 'SERVICES', labelJp: 'サービス', href: '/services/',
     subItems: [
-      { id: 'body', labelEn: 'BODY WELLNESS', labelJp: 'ボディケア', href: '/services/body-wellness' },
-      { id: 'skin', labelEn: 'SKIN THERAPY', labelJp: 'スキンケア', href: '/services/skin-therapy' },
-      { id: 'rituals', labelEn: 'HERBAL RITUALS', labelJp: 'ハーブの儀式', href: '/services/herbal-rituals' },
+      { id: 'body', labelEn: 'BODY WELLNESS', labelJp: 'ボディケア', href: '/services/body-wellness/' },
+      { id: 'skin', labelEn: 'SKIN THERAPY', labelJp: 'スキンケア', href: '/services/skin-therapy/' },
+      { id: 'rituals', labelEn: 'HERBAL RITUALS', labelJp: 'ハーブの儀式', href: '/services/herbal-rituals/' },
     ]
   },
-  { labelEn: 'CORPORATE', labelJp: '法人向け', href: '/corporate' },
+  { labelEn: 'CORPORATE', labelJp: '法人向け', href: '/corporate/' },
 ];
 
 export const FEATURED_POSTS: ArticleItem[] = [
