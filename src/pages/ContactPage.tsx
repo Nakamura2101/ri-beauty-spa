@@ -12,6 +12,7 @@ export const ContactPage: React.FC = () => {
       />
 
       <main className="pt-32">
+        <h1 className="sr-only">お問い合わせ</h1>
         <Contact />
       </main>
     </>

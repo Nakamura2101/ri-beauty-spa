@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import { Navbar } from './components/Navbar';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -12,12 +12,34 @@ import { ServicesPage } from './pages/ServicesPage';
 import { BodyWellnessPage } from './pages/BodyWellnessPage';
 import { SkinTherapyPage } from './pages/SkinTherapyPage';
 import { HerbalRitualsPage } from './pages/HerbalRitualsPage';
+import { FacialPage } from './pages/FacialPage';
+import { PricePage } from './pages/PricePage';
+import { AccessPage } from './pages/AccessPage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+
+const PrerenderReady: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Build-time prerendering uses a headless browser. We signal when React + Seo ran.
+    if (!(window as any).__PRERENDERING__) return;
+
+    const t = window.setTimeout(() => {
+      (window as any).__PRERENDER_READY__ = true;
+      window.dispatchEvent(new Event('prerender:ready'));
+    }, 50);
+
+    return () => window.clearTimeout(t);
+  }, [location.pathname]);
+
+  return null;
+};
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen">
+      <PrerenderReady />
       <ScrollToTop />
       <Navbar />
 
@@ -36,6 +58,14 @@ const App: React.FC = () => {
         <Route path="/services/skin-therapy/" element={<SkinTherapyPage />} />
         <Route path="/services/herbal-rituals" element={<HerbalRitualsPage />} />
         <Route path="/services/herbal-rituals/" element={<HerbalRitualsPage />} />
+        <Route path="/services/facial" element={<FacialPage />} />
+        <Route path="/services/facial/" element={<FacialPage />} />
+
+        <Route path="/price" element={<PricePage />} />
+        <Route path="/price/" element={<PricePage />} />
+
+        <Route path="/access" element={<AccessPage />} />
+        <Route path="/access/" element={<AccessPage />} />
 
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/contact/" element={<ContactPage />} />
