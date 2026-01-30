@@ -240,7 +240,15 @@ const main = async () => {
   const { server, baseUrl } = await createSpaFallbackServer();
   log(`Local SPA server: ${baseUrl}`);
 
-  const browser = await puppeteer.launch({ headless: 'new' });
+  const isCI = !!process.env.CI;
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    ...(isCI
+      ? {
+          args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+        }
+      : {}),
+  });
   try {
     const page = await browser.newPage();
 
