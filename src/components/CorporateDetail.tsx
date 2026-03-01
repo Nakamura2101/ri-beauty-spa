@@ -1,11 +1,8 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-interface Props {
-  onBack: () => void;
-}
-
-export const CorporateDetail: React.FC<Props> = ({ onBack }) => {
+export const CorporateDetail: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     company: '',
@@ -28,15 +25,15 @@ export const CorporateDetail: React.FC<Props> = ({ onBack }) => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="mb-24 flex flex-col items-center text-center">
-          <button 
-            onClick={onBack}
+          <Link
+            to="/"
             className="mb-12 text-[12px] uppercase tracking-[0.4em] font-bold text-spa-green flex items-center gap-3 hover:opacity-60 transition-opacity"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
             BACK TO HOME
-          </button>
+          </Link>
           
           <div className="space-y-3">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-spa-deep italic tracking-tight">
@@ -146,12 +143,12 @@ export const CorporateDetail: React.FC<Props> = ({ onBack }) => {
         {/* Footer Navigation */}
         <div className="mt-40 text-center">
           <div className="w-20 h-px bg-spa-green/20 mx-auto mb-12"></div>
-          <button 
-            onClick={onBack}
+          <Link
+            to="/"
             className="px-16 py-6 bg-spa-deep text-white text-[11px] uppercase tracking-[0.5em] font-bold transition-all hover:bg-spa-green shadow-2xl rounded-sm"
           >
             ホームへ戻る
-          </button>
+          </Link>
         </div>
       </div>
     </div>

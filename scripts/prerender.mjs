@@ -16,6 +16,7 @@ const APP_ROUTES_FILE = path.resolve(PROJECT_ROOT, 'src', 'App.tsx');
 const REQUIRED_ROUTES = [
   '/',
   '/about/',
+  '/corporate/',
   '/services/',
   '/services/body-wellness/',
   '/services/skin-therapy/',

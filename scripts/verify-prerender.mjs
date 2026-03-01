@@ -18,6 +18,12 @@ const routes = [
     canonical: 'https://www.ri-beauty-spa.com/about/',
   },
   {
+    route: '/corporate/',
+    file: path.join(DIST_DIR, 'corporate', 'index.html'),
+    mustIncludeAny: ['法人向け', '川崎', 'サービス'],
+    canonical: 'https://www.ri-beauty-spa.com/corporate/',
+  },
+  {
     route: '/services/',
     file: path.join(DIST_DIR, 'services', 'index.html'),
     mustIncludeAny: [

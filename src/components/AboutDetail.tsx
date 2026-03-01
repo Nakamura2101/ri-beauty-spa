@@ -1,10 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-interface Props {
-  onBack: () => void;
-}
-
-export const AboutDetail: React.FC<Props> = ({ onBack }) => {
+export const AboutDetail: React.FC = () => {
   const aboutBodyParagraphsJp = [
     'Ri Beauty Spa は、忙しい毎日の中でふっと肩の力を抜き、心と身体を整えるための“小さな休息の場所”として生まれました。',
     '私たちは、技術だけでなく「安心して任せられる」「きちんと向き合ってもらえる」と感じていただける時間こそが、本当のリラックスにつながると考えています。',
@@ -22,7 +19,7 @@ export const AboutDetail: React.FC<Props> = ({ onBack }) => {
     'そして、Ri Beauty Spa の価値は“人”にあると考えています。',
     '経験を積んだスタッフが、確かな技術と丁寧さを大切にしながら、お一人おひとりの状態やご要望に合わせて施術内容を調整いたします。身体はそれぞれ違うからこそ、無理なく、心地よく、安心できるケアを。',
     'Ri Beauty Spa は、Akatsuki Tokyo 株式会社の管理・運営のもと、長く信頼いただけるサロンを目指しています。',
-    'お客様の満足 ya 安全、そして心地よい体験を第一に、これからも丁寧に積み重ねてまいります。',
+    'お客様の満足と安全、そして心地よい体験を第一に、これからも丁寧に積み重ねてまいります。',
     '「少し休みたい」「整えたい」「軽くなりたい」',
     'そんな時は、どうぞ Ri Beauty Spa へお越しください。皆さまのご来店を心よりお待ちしております。'
   ];
@@ -32,15 +29,15 @@ export const AboutDetail: React.FC<Props> = ({ onBack }) => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="mb-24 flex flex-col items-center text-center">
-          <button 
-            onClick={onBack}
+          <Link
+            to="/"
             className="mb-12 text-[12px] uppercase tracking-[0.4em] font-bold text-black flex items-center gap-3 hover:opacity-60 transition-opacity"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
             BACK TO HOME
-          </button>
+          </Link>
           
           <div className="space-y-3">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-black italic tracking-tight">
@@ -80,7 +77,7 @@ export const AboutDetail: React.FC<Props> = ({ onBack }) => {
               </div>
               <div className="w-10 h-px bg-spa-green/20"></div>
               <p className="text-black font-normal text-lg leading-relaxed">
-                Ri Beauty Spa は、Akatsuki Tokyo 株式会社の管理・運営のもと、長く信頼いただけるサロンを目指しています。お客様の満足 và 安全、そして心地よい体験を第一に、これからも丁寧に積み重ねてまいります。
+                Ri Beauty Spa は、Akatsuki Tokyo 株式会社の管理・運営のもと、長く信頼いただけるサロンを目指しています。お客様の満足と安全、そして心地よい体験を第一に、これからも丁寧に積み重ねてまいります。
               </p>
             </div>
           </div>
@@ -89,12 +86,12 @@ export const AboutDetail: React.FC<Props> = ({ onBack }) => {
         {/* Footer Navigation */}
         <div className="mt-40 text-center">
           <div className="w-20 h-px bg-spa-green/20 mx-auto mb-12"></div>
-          <button 
-            onClick={onBack}
+          <Link
+            to="/"
             className="px-16 py-6 bg-spa-deep text-white text-[11px] uppercase tracking-[0.5em] font-bold transition-all hover:bg-spa-green shadow-2xl rounded-sm"
           >
             ホームへ戻る
-          </button>
+          </Link>
         </div>
       </div>
     </div>

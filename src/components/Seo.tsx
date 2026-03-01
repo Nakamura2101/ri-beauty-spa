@@ -6,6 +6,7 @@ type Props = {
   description: string;
   /** Canonical path (e.g. "/services/skin-therapy/") */
   canonicalPath?: string;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 };
 
 const normalizeTrailingSlash = (pathname: string) => {
@@ -45,13 +46,36 @@ const upsertMeta = (nameOrProperty: { name?: string; property?: string }, conten
   el.setAttribute('content', content);
 };
 
+const upsertJsonLd = (structuredData?: Record<string, unknown> | Array<Record<string, unknown>>) => {
+  const id = 'seo-jsonld';
+  const existing = document.head.querySelector<HTMLScriptElement>(`script#${id}[type="application/ld+json"]`);
+
+  if (!structuredData) {
+    if (existing) existing.remove();
+    return;
+  }
+
+  const payload = Array.isArray(structuredData)
+    ? { '@context': 'https://schema.org', '@graph': structuredData }
+    : structuredData;
+
+  const script = existing ?? document.createElement('script');
+  script.type = 'application/ld+json';
+  script.id = id;
+  script.text = JSON.stringify(payload);
+
+  if (!existing) {
+    document.head.appendChild(script);
+  }
+};
+
 /**
  * Lightweight head manager (React 19 compatible).
  *
  * Note: This runs client-side. Google generally executes JS for indexing, but
  * if you ever need guaranteed SSR metadata, we’d add a server/SSR later.
  */
-export const Seo: React.FC<Props> = ({ title, description, canonicalPath }) => {
+export const Seo: React.FC<Props> = ({ title, description, canonicalPath, structuredData }) => {
   useEffect(() => {
     document.title = title;
 
@@ -73,8 +97,18 @@ export const Seo: React.FC<Props> = ({ title, description, canonicalPath }) => {
     // Keep OG tags in sync for sharing.
     upsertMeta({ property: 'og:title' }, title);
     upsertMeta({ property: 'og:description' }, description);
+    upsertMeta({ property: 'og:type' }, 'website');
     upsertMeta({ property: 'og:url' }, canonicalUrl);
-  }, [title, description, canonicalPath]);
+    upsertMeta({ property: 'og:image' }, `${SITE_ORIGIN}/images/logo.png`);
+
+    // Twitter cards.
+    upsertMeta({ name: 'twitter:card' }, 'summary_large_image');
+    upsertMeta({ name: 'twitter:title' }, title);
+    upsertMeta({ name: 'twitter:description' }, description);
+    upsertMeta({ name: 'twitter:image' }, `${SITE_ORIGIN}/images/logo.png`);
+
+    upsertJsonLd(structuredData);
+  }, [title, description, canonicalPath, structuredData]);
 
   return null;
 };

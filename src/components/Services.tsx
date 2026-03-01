@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FEATURED_POSTS, UI_STRINGS, SQUARE_BOOKING_LINK } from '../constants';
 
 export const Services: React.FC = () => {
@@ -57,14 +58,23 @@ export const Services: React.FC = () => {
                     {post.content}
                   </p>
                   <div className="pt-2">
-                    <a 
-                      href={SQUARE_BOOKING_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block text-[9px] uppercase tracking-[0.4em] font-bold text-spa-deep border-b border-spa-deep/20 pb-1.5 hover:text-spa-green hover:border-spa-green transition-all"
-                    >
-                      DETAILS & BOOKING
-                    </a>
+                    {post.href ? (
+                      <Link
+                        to={post.href}
+                        className="inline-block text-[9px] uppercase tracking-[0.4em] font-bold text-spa-deep border-b border-spa-deep/20 pb-1.5 hover:text-spa-green hover:border-spa-green transition-all"
+                      >
+                        VIEW DETAILS
+                      </Link>
+                    ) : (
+                      <a 
+                        href={SQUARE_BOOKING_LINK}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-[9px] uppercase tracking-[0.4em] font-bold text-spa-deep border-b border-spa-deep/20 pb-1.5 hover:text-spa-green hover:border-spa-green transition-all"
+                      >
+                        DETAILS & BOOKING
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

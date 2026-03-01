@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { Hero } from '../components/Hero';
 import { About } from '../components/About';
@@ -14,8 +14,8 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <Seo
-        title="Ri Beauty Spa & Wellness｜川崎のリラクゼーションスパ"
-        description="川崎にあるRi Beauty Spa & Wellness。フェイシャル、ボディ、ハーブ療法で心と身体を整える上質なスパ体験。"
+        title="Ri Beauty Spa & Wellness｜川崎のリラクゼーションスパ・フェイシャル＆ボディケア"
+        description="川崎にあるRi Beauty Spa & Wellness。フェイシャル、ボディケア、ハーバルトリートメントで心と身体を整える上質なスパ体験をご提供します。"
         canonicalPath="/"
       />
 
@@ -48,12 +48,12 @@ export const HomePage: React.FC = () => {
             <p className="text-sm md:text-base tracking-[0.4em] text-spa-green/70 font-bold uppercase">CORPORATE SERVICES</p>
           </div>
           <div className="w-12 h-px bg-spa-green/20 mx-auto mb-10"></div>
-          <button
-            onClick={() => navigate('/corporate/')}
+          <Link
+            to="/corporate/"
             className="inline-block px-14 py-6 bg-spa-accent text-white text-[11px] uppercase tracking-[0.5em] font-bold transition-all hover:brightness-110 shadow-xl hover:shadow-2xl rounded-sm"
           >
             法人向けお問い合わせ
-          </button>
+          </Link>
         </div>
       </section>
 

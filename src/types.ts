@@ -20,6 +20,7 @@ export interface ArticleItem {
   titleJp: string;
   content: string;
   image: string;
+  href?: string;
   tagEn?: string;
   tagJp?: string;
 }

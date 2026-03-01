@@ -27,10 +27,10 @@ export const NAV_ITEMS = [
 ];
 
 export const FEATURED_POSTS: ArticleItem[] = [
-  { id: 'f1', titleEn: 'Vietnamese Traditional Massage', titleJp: 'ベトナム伝統マッサージ', content: 'ベトナム伝統の指圧とロングストロークを組み合わせた手技で、凝り固まった筋肉を深く解きほぐします。', image: '/images/home/VietnameseTraditionalMassage.jpg', tagEn: 'SIGNATURE', tagJp: 'シグネチャー' },
-  { id: 'f2', titleEn: 'Yomogi Steam', titleJp: 'よもぎ蒸し', content: '伝統的な方法で体内から浄化し温めます. 内側から溢れ出す活力を体感してください。', image: '/images/home/YomogiSteam.jpg', tagEn: 'TRADITION', tagJp: '伝統' },
-  { id: 'f3', titleEn: 'Herbal Peel', titleJp: 'ハーブピーリング', content: '希少な生薬エキスで輝く滑らかな肌へ. 肌本来の美しさを引き出す特別なケアです。', image: '/images/home/HerbalPeel.jpg', tagEn: 'RADIANCE', tagJp: '輝き' },
-  { id: 'f4', titleEn: 'Holistic Care', titleJp: 'ホリスティックケア', content: '持続可能な美しさのための心身の調和。トータルバランスを整えるケア。', image: '/images/home/HolisticCare.jpg', tagEn: 'HOLISTIC', tagJp: 'ホリスティック' }
+  { id: 'f1', titleEn: 'Vietnamese Traditional Massage', titleJp: 'ベトナム伝統マッサージ', content: 'ベトナム伝統の指圧とロングストロークを組み合わせた手技で、凝り固まった筋肉を深く解きほぐします。', image: '/images/home/VietnameseTraditionalMassage.jpg', href: '/services/body-wellness/', tagEn: 'SIGNATURE', tagJp: 'シグネチャー' },
+  { id: 'f2', titleEn: 'Yomogi Steam', titleJp: 'よもぎ蒸し', content: '伝統的な方法で体内から浄化し温めます。内側から溢れ出す活力を体感してください。', image: '/images/home/YomogiSteam.jpg', href: '/services/herbal-rituals/', tagEn: 'TRADITION', tagJp: '伝統' },
+  { id: 'f3', titleEn: 'Herbal Peel', titleJp: 'ハーブピーリング', content: '希少な生薬エキスで輝く滑らかな肌へ。肌本来の美しさを引き出す特別なケアです。', image: '/images/home/HerbalPeel.jpg', href: '/services/skin-therapy/', tagEn: 'RADIANCE', tagJp: '輝き' },
+  { id: 'f4', titleEn: 'Holistic Care', titleJp: 'ホリスティックケア', content: '持続可能な美しさのための心身の調和。トータルバランスを整えるケア。', image: '/images/home/HolisticCare.jpg', href: '/services/', tagEn: 'HOLISTIC', tagJp: 'ホリスティック' }
 ];
 
 // Fix for HerbalRitualsDetail.tsx: Exported missing HERBAL_ARTICLES array
@@ -436,7 +436,7 @@ export const SKIN_CARE_MAIN_TREATMENTS: ArticleItem[] = [
     id: 'skin-main-02',
     titleJp: 'ハーブピーリング（ツヤ肌コース）',
     titleEn: 'Radiant Glow Peel',
-    content: '天然由来 of ハーブ成分を使用し、肌のターンオーバーをサポートします. くすみが気になる方や、内側から発光するようなツヤ肌を目指す方に最適なコースです.',
+    content: '天然由来のハーブ成分を使用し、肌のターンオーバーをサポートします。くすみが気になる方や、内側から発光するようなツヤ肌を目指す方に最適なコースです。',
     image: '/images/SKINTHERAPY/RadiantGlowPeel.jpg',
     tagEn: 'HERBAL PEEL'
   },
@@ -444,7 +444,7 @@ export const SKIN_CARE_MAIN_TREATMENTS: ArticleItem[] = [
     id: 'skin-main-03',
     titleJp: 'ハーブピーリング（ニキビ肌ケアコース）',
     titleEn: 'Acne Care Peel',
-    content: 'トラブルの起きやすい肌を鎮静させ, 健やかな状態へと整えます. ニキビ跡や肌荒れにお悩みの方へ寄り添う, 専門的なスキンケアコースです.',
+    content: 'トラブルの起きやすい肌を鎮静させ、健やかな状態へと整えます。ニキビ跡や肌荒れにお悩みの方へ寄り添う、専門的なスキンケアコースです。',
     image: '/images/SKINTHERAPY/AcneCarePeel.jpg',
     tagEn: 'HERBAL PEEL'
   },
@@ -452,7 +452,7 @@ export const SKIN_CARE_MAIN_TREATMENTS: ArticleItem[] = [
     id: 'skin-main-04',
     titleJp: 'ボディ・リニューアル・ハーブピーリング（背中・ヒップ・二の腕・脇ケア）',
     titleEn: 'Body Renewal Herbal Peel',
-    content: '頑固な背中ニキビや、ヒップ・二の腕・脇の黒ずみを集中ケア. 生薬の力で肌のターンオーバー को 強力にサポートし、炎症を鎮めながら、透明感のある滑らかな肌へと再生を促します. 露出の多い季節や、自分では届きにくい部位の徹底ケアに.',
+    content: '頑固な背中ニキビや、ヒップ・二の腕・脇の黒ずみを集中ケア。生薬の力で肌のターンオーバーを強力にサポートし、炎症を鎮めながら、透明感のある滑らかな肌へと再生を促します。露出の多い季節や、自分では届きにくい部位の徹底ケアに。',
     image: '/images/SKINTHERAPY/BodyRenewalHerbalPeel.png',
     tagEn: 'HERBAL PEEL'
   },
@@ -460,7 +460,7 @@ export const SKIN_CARE_MAIN_TREATMENTS: ArticleItem[] = [
     id: 'skin-main-05',
     titleJp: 'ハイパーナイフ フェイスケア（フェイスライン温感ケア）',
     titleEn: 'Hyper Knife Face Care',
-    content: '高周波マシンを使用した温感トリートメントです. お顔のコリをほぐし、むくみをスッキリさせることで、シャープなフェイスラインとリフトアップを目指します.',
+    content: '高周波マシンを使用した温感トリートメントです。お顔のコリをほぐし、むくみをスッキリさせることで、シャープなフェイスラインとリフトアップを目指します。',
     image: '/images/SKINTHERAPY/HyperKnifeFaceCare(15phut).jpg',
     tagEn: 'MACHINE'
   },
@@ -468,7 +468,7 @@ export const SKIN_CARE_MAIN_TREATMENTS: ArticleItem[] = [
     id: 'skin-main-06',
     titleJp: 'ブライトニングケア（透明感サポート）',
     titleEn: 'Brightening Therapy',
-    content: '紫外線ダメージや乾燥によるくすみにアプローチ. 透明感のある明るい印象の肌へと導く、贅沢なホワイトニング・サポートケアです.',
+    content: '紫外線ダメージや乾燥によるくすみにアプローチ。透明感のある明るい印象の肌へと導く、贅沢なホワイトニング・サポートケアです。',
     image: '/images/SKINTHERAPY/BrighteningTherapy.jpg',
     tagEn: 'TARGETED'
   },
@@ -476,7 +476,7 @@ export const SKIN_CARE_MAIN_TREATMENTS: ArticleItem[] = [
     id: 'skin-main-07',
     titleJp: '毛穴ケア（ディープクレンジング）',
     titleEn: 'Deep Pore Cleansing',
-    content: '日々の洗顔では落としきれない毛穴의 奥の汚れを徹底洗浄. 肌を滑らかにし、美容成分の浸透を助けるクリーンな土台を作ります.',
+    content: '日々の洗顔では落としきれない毛穴の奥の汚れを徹底洗浄。肌を滑らかにし、美容成分の浸透を助けるクリーンな土台を作ります。',
     image: '/images/SKINTHERAPY/DeepPoreCleansing.jpg',
     tagEn: 'TARGETED'
   },
@@ -484,7 +484,7 @@ export const SKIN_CARE_MAIN_TREATMENTS: ArticleItem[] = [
     id: 'skin-main-08',
     titleJp: '毛穴集中ケア（角栓・皮脂ケア）',
     titleEn: 'Intensive Sebum Care',
-    content: 'Ｔゾーンの黒ずみや角栓が気になる方への集中プログラム. 皮脂バランスを整え、引き締まった毛穴と滑らかな手触りの鼻周りへと整えます.',
+    content: 'Ｔゾーンの黒ずみや角栓が気になる方への集中プログラム。皮脂バランスを整え、引き締まった毛穴と滑らかな手触りの鼻周りへと整えます。',
     image: '/images/SKINTHERAPY/IntensiveSebumCare.jpg',
     tagEn: 'TARGETED'
   }
@@ -495,7 +495,7 @@ export const SKIN_CARE_OPTIONS: ArticleItem[] = [
     id: 'skin-opt-01',
     titleJp: 'デコルテケア（首・肩まわり）',
     titleEn: 'Decollete Care',
-    content: 'フェイシャルと合わせることで, リンパの流れ को さらに促進. 首からデコルテにかけての緊張をほぐし, 顔色のトーンアップも期待できます.',
+    content: 'フェイシャルと合わせることで、リンパの流れをさらに促進。首からデコルテにかけての緊張をほぐし、顔色のトーンアップも期待できます。',
     image: '/images/SKINTHERAPY/DecolleteCare.jpg',
     tagEn: 'OPTION'
   },
@@ -503,7 +503,7 @@ export const SKIN_CARE_OPTIONS: ArticleItem[] = [
     id: 'skin-opt-02',
     titleJp: '保湿パック（集中うるおい）',
     titleEn: 'Intensive Hydrating Pack',
-    content: '特に乾燥が気になる時の集中チャージ. 高濃度の保湿成分 को 配合したパックで, 施術後の肌にさらなる弾力 và 潤いを与えます.',
+    content: '特に乾燥が気になる時の集中チャージ。高濃度の保湿成分を配合したパックで、施術後の肌にさらなる弾力と潤いを与えます。',
     image: '/images/SKINTHERAPY/IntensiveHydratingPack.jpg',
     tagEn: 'OPTION'
   },
@@ -511,7 +511,7 @@ export const SKIN_CARE_OPTIONS: ArticleItem[] = [
     id: 'skin-opt-03',
     titleJp: 'ヘッドケア（頭皮リフレッシュ）',
     titleEn: 'Scalp Refresh Care',
-    content: '頭部のツボを刺激することで, 眼精疲労や頭の重さを解消. 最後にプラスすることで, 心身ともに深いリフレッシュ感を味わえます.',
+    content: '頭部のツボを刺激することで、眼精疲労や頭の重さを解消。最後にプラスすることで、心身ともに深いリフレッシュ感を味わえます。',
     image: '/images/SKINTHERAPY/ScalpRefreshCare.jpg',
     tagEn: 'OPTION'
   },
@@ -519,7 +519,7 @@ export const SKIN_CARE_OPTIONS: ArticleItem[] = [
     id: 'skin-opt-04',
     titleJp: 'ハイパーナイフ15分｜リフトアップ＆フェイスラインケア',
     titleEn: 'Hyper Knife Face Care (15 min)',
-    content: '高周波マシンで顔のコリをほぐし、むくみをスッキリ解消。シャープなフェイスラインへ.',
+    content: '高周波マシンで顔のコリをほぐし、むくみをスッキリ解消。シャープなフェイスラインへ。',
     image: '/images/SKINTHERAPY/HyperKnifeFaceCare(15phut).jpg',
     tagEn: 'OPTION'
   }
