@@ -18,6 +18,13 @@ export const ServicesPage: React.FC = () => {
           <p className="mt-4 text-gray-600 leading-relaxed max-w-2xl">
             Ri Beauty Spa &amp; Wellnessのサービス一覧。ボディ、スキン、ハーバルの各メニューへこちらからアクセスできます。
           </p>
+          <p className="mt-4 text-gray-600 leading-relaxed max-w-2xl">
+            初めての方は
+            <Link to="/blog/vietnamese-massage-kawasaki/" className="underline underline-offset-4 ml-1 hover:opacity-70">
+              ベトナム式マッサージのガイド
+            </Link>
+            もあわせてご覧ください。
+          </p>
 
           <nav aria-label="Service categories" className="mt-8">
             <ul className="flex flex-wrap gap-3">

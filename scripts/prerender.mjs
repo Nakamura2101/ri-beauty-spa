@@ -25,6 +25,7 @@ const REQUIRED_ROUTES = [
   '/price/',
   '/access/',
   '/contact/',
+  '/blog/vietnamese-massage-kawasaki/',
 ];
 
 const log = (...args) => console.log('[prerender]', ...args);

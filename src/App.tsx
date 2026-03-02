@@ -16,6 +16,7 @@ import { FacialPage } from './pages/FacialPage';
 import { PricePage } from './pages/PricePage';
 import { AccessPage } from './pages/AccessPage';
 import { ContactPage } from './pages/ContactPage';
+import { BlogVietnameseMassagePage } from './pages/BlogVietnameseMassagePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 const PrerenderReady: React.FC = () => {
@@ -69,6 +70,9 @@ const App: React.FC = () => {
 
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/contact/" element={<ContactPage />} />
+
+        <Route path="/blog/vietnamese-massage-kawasaki" element={<BlogVietnameseMassagePage />} />
+        <Route path="/blog/vietnamese-massage-kawasaki/" element={<BlogVietnameseMassagePage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
