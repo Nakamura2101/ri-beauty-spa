@@ -24,6 +24,7 @@ export const NAV_ITEMS = [
     ]
   },
   { labelEn: 'CORPORATE', labelJp: '法人向け', href: '/corporate/' },
+  { labelEn: 'BLOG', labelJp: 'ブログ', href: '/blog/vietnamese-massage-kawasaki/' },
 ];
 
 export const FEATURED_POSTS: ArticleItem[] = [
