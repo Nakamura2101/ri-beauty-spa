@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BODY_WELLNESS_ADDITIONAL_OPTIONS, BODY_WELLNESS_MAIN_THERAPIES, SQUARE_BOOKING_LINK } from '../constants';
 
 interface Props {
@@ -32,6 +33,31 @@ export const BodyCareDetail: React.FC<Props> = ({ onBack }) => {
           </div>
           <div className="w-12 h-px bg-spa-green/20 mt-12"></div>
         </div>
+
+        <section className="max-w-6xl mx-auto mb-16 text-center">
+          <h2 className="text-2xl font-serif text-black">関連サービス</h2>
+          <p className="mt-3 text-gray-600 font-light">他のサービスもあわせてご覧いただけます。</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/services/"
+              className="px-5 py-2 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.3em] font-bold text-black hover:opacity-70"
+            >
+              SERVICES
+            </Link>
+            <Link
+              to="/services/skin-therapy/"
+              className="px-5 py-2 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.3em] font-bold text-black hover:opacity-70"
+            >
+              SKIN THERAPY
+            </Link>
+            <Link
+              to="/services/herbal-rituals/"
+              className="px-5 py-2 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.3em] font-bold text-black hover:opacity-70"
+            >
+              HERBAL RITUALS
+            </Link>
+          </div>
+        </section>
 
         {/* Part 1: Main Services */}
         <div className="max-w-6xl mx-auto mb-32">

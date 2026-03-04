@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { BodyCareDetail } from '../components/BodyCareDetail';
+import { SITE_ORIGIN } from '../constants';
 
 export const BodyWellnessPage: React.FC = () => {
   const navigate = useNavigate();
@@ -12,6 +13,23 @@ export const BodyWellnessPage: React.FC = () => {
         title="ボディウェルネス｜Ri Beauty Spa & Wellness 川崎"
         description="ボディケアで巡りとバランスを整えるトリートメント。川崎のRi Beauty Spa & Wellnessで深いリラクゼーションを。"
         canonicalPath="/services/body-wellness/"
+        structuredData={[
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'ホーム', item: `${SITE_ORIGIN}/` },
+              { '@type': 'ListItem', position: 2, name: 'サービス', item: `${SITE_ORIGIN}/services/` },
+              { '@type': 'ListItem', position: 3, name: 'ボディケア', item: `${SITE_ORIGIN}/services/body-wellness/` },
+            ],
+          },
+          {
+            '@type': 'Service',
+            name: 'ボディケア',
+            serviceType: 'ボディウェルネス',
+            url: `${SITE_ORIGIN}/services/body-wellness/`,
+            description: 'ボディケアで巡りとバランスを整えるトリートメント。川崎のRi Beauty Spa & Wellnessで深いリラクゼーションを。',
+          },
+        ]}
       />
 
       <BodyCareDetail onBack={() => navigate('/services/')} />

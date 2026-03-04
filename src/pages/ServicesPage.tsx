@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { Services } from '../components/Services';
+import { SITE_ORIGIN } from '../constants';
 
 export const ServicesPage: React.FC = () => {
   return (
@@ -10,6 +11,29 @@ export const ServicesPage: React.FC = () => {
         title="サービス一覧｜Ri Beauty Spa 川崎"
         description="川崎のRi Beauty Spaが提供するフェイシャル、ボディケア、ハーバルリチュアルの一覧ページ。"
         canonicalPath="/services/"
+        structuredData={[
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'ホーム', item: `${SITE_ORIGIN}/` },
+              { '@type': 'ListItem', position: 2, name: 'サービス', item: `${SITE_ORIGIN}/services/` },
+            ],
+          },
+          {
+            '@type': 'CollectionPage',
+            name: 'サービス一覧',
+            url: `${SITE_ORIGIN}/services/`,
+            description: '川崎のRi Beauty Spaが提供するフェイシャル、ボディケア、ハーバルリチュアルの一覧ページ。',
+            mainEntity: {
+              '@type': 'ItemList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'ボディケア', url: `${SITE_ORIGIN}/services/body-wellness/` },
+                { '@type': 'ListItem', position: 2, name: 'スキンケア', url: `${SITE_ORIGIN}/services/skin-therapy/` },
+                { '@type': 'ListItem', position: 3, name: 'ハーブの儀式', url: `${SITE_ORIGIN}/services/herbal-rituals/` },
+              ],
+            },
+          },
+        ]}
       />
 
       <main className="pt-32">
