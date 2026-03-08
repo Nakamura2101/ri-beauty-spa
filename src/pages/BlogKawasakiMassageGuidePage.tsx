@@ -8,14 +8,14 @@ export const BlogKawasakiMassageGuidePage: React.FC = () => {
     <>
       <Seo
         title="川崎でマッサージを選ぶときのポイント｜目的別の選び方・予約前チェック"
-        description="川崎でマッサージを探している方へ。肩こり・むくみ・疲労回復など目的別の選び方、予約前チェック、心地よく受けるコツを簡潔に解説。Ri Beauty Spaの予約はこちら。"
+        description="川崎でマッサージを探している方へ。目的別の選び方（肩こり・むくみ・疲労感）や予約前チェック、当日の流れを簡潔に解説。Ri Beauty Spaの予約はこちら。"
         canonicalPath="/blog/kawasaki-massage-guide/"
         structuredData={[
           {
             '@type': 'BlogPosting',
             headline: '川崎でマッサージを選ぶときのポイント｜目的別の選び方・予約前チェック',
             description:
-              '川崎でマッサージを探している方へ。肩こり・むくみ・疲労回復など目的別の選び方、予約前チェック、心地よく受けるコツを簡潔に解説。Ri Beauty Spaの予約はこちら。',
+              '川崎でマッサージを探している方へ。目的別の選び方（肩こり・むくみ・疲労感）や予約前チェック、当日の流れを簡潔に解説。Ri Beauty Spaの予約はこちら。',
             mainEntityOfPage: `${SITE_ORIGIN}/blog/kawasaki-massage-guide/`,
             author: {
               '@type': 'Organization',
@@ -35,42 +35,34 @@ export const BlogKawasakiMassageGuidePage: React.FC = () => {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: '強さは調整できますか？',
+                name: '60分と90分、どちらを選べばいいですか？',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'はい。ご希望に合わせて調整可能です。痛みを我慢せずお伝えください。',
+                  text: '軽い疲れや初めての方は60分、全身の疲労感が強い方は90分が選ばれやすいです。迷う場合は目的を添えてご相談ください。',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'どのくらいの頻度が目安ですか？',
+                name: '当日は何分前に行けばいいですか？',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: '生活スタイルや疲労感により異なります。まずは一度受けてご相談ください。',
+                  text: '初回はカウンセリングがあるため、5〜10分前の到着がおすすめです。',
                 },
               },
               {
                 '@type': 'Question',
-                name: '男性でも利用できますか？',
+                name: '服装や持ち物は必要ですか？',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: '店舗の利用条件に沿ってご案内しています。ご予約時にお問い合わせください。',
+                  text: '動きやすい服装が安心です。詳細は予約時の案内をご確認ください。',
                 },
               },
               {
                 '@type': 'Question',
-                name: '予約は当日でも可能ですか？',
+                name: '予約の変更・キャンセルはできますか？',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: '空き状況によります。WEB予約からご確認ください。',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: '体調面で不安がある場合は？',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: '妊娠中・持病などがある場合は、事前にご相談ください。',
+                  text: '可能です。予約ページの案内に沿ってお手続きください。',
                 },
               },
             ],
@@ -157,9 +149,12 @@ export const BlogKawasakiMassageGuidePage: React.FC = () => {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-serif tracking-wide">6. Ri Beauty Spaについて</h2>
+              <h2 className="text-2xl font-serif tracking-wide">6. Ri Beauty Spaで相談できること（初めての方へ）</h2>
               <p className="text-gray-700 text-justify">
-                Ri Beauty Spaでは、落ち着いた空間で、首・肩・背中・腰など疲れが出やすい部位を丁寧にケアします。強さや重点部位はご希望に合わせて調整可能です。
+                Ri Beauty Spaでは、はじめての方でも迷いにくいように、目的（肩まわり・むくみ・疲労感など）や好みの圧をうかがい、メニュー選びをサポートしています。
+              </p>
+              <p className="text-gray-700">
+                「どれを選べばいいかわからない」「短時間でリフレッシュしたい」など、まずはお気軽にご相談ください。
               </p>
               <p className="text-gray-700">
                 →{' '}
@@ -173,29 +168,24 @@ export const BlogKawasakiMassageGuidePage: React.FC = () => {
               <h2 className="text-2xl font-serif tracking-wide">よくある質問（FAQ）</h2>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>Q. 強さは調整できますか？</strong>
+                  <strong>Q. 60分と90分、どちらを選べばいいですか？</strong>
                   <br />
-                  A. はい。ご希望に合わせて調整可能です。痛みを我慢せずお伝えください。
+                  A. 軽い疲れや初めての方は60分、全身の疲労感が強い方は90分が選ばれやすいです。迷う場合は目的を添えてご相談ください。
                 </p>
                 <p>
-                  <strong>Q. どのくらいの頻度が目安ですか？</strong>
+                  <strong>Q. 当日は何分前に行けばいいですか？</strong>
                   <br />
-                  A. 生活スタイルや疲労感により異なります。まずは一度受けてご相談ください。
+                  A. 初回はカウンセリングがあるため、5〜10分前の到着がおすすめです。
                 </p>
                 <p>
-                  <strong>Q. 男性でも利用できますか？</strong>
+                  <strong>Q. 服装や持ち物は必要ですか？</strong>
                   <br />
-                  A. 店舗の利用条件に沿ってご案内しています。ご予約時にお問い合わせください。
+                  A. 動きやすい服装が安心です。詳細は予約時の案内をご確認ください。
                 </p>
                 <p>
-                  <strong>Q. 予約は当日でも可能ですか？</strong>
+                  <strong>Q. 予約の変更・キャンセルはできますか？</strong>
                   <br />
-                  A. 空き状況によります。WEB予約からご確認ください。
-                </p>
-                <p>
-                  <strong>Q. 体調面で不安がある場合は？</strong>
-                  <br />
-                  A. 妊娠中・持病などがある場合は、事前にご相談ください。
+                  A. 可能です。予約ページの案内に沿ってお手続きください。
                 </p>
               </div>
             </section>
