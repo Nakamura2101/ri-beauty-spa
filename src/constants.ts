@@ -24,7 +24,25 @@ export const NAV_ITEMS = [
     ]
   },
   { labelEn: 'CORPORATE', labelJp: '法人向け', href: '/corporate/' },
-  { labelEn: 'BLOG', labelJp: 'ブログ', href: '/blog/vietnamese-massage-kawasaki/' },
+  {
+    labelEn: 'BLOG',
+    labelJp: 'ブログ',
+    href: '/blog/vietnamese-massage-kawasaki/',
+    subItems: [
+      {
+        id: 'blog-vietnamese',
+        labelEn: 'VIETNAMESE MASSAGE',
+        labelJp: 'ベトナム式マッサージ',
+        href: '/blog/vietnamese-massage-kawasaki/',
+      },
+      {
+        id: 'blog-kawasaki-guide',
+        labelEn: 'KAWASAKI MASSAGE GUIDE',
+        labelJp: '川崎マッサージガイド',
+        href: '/blog/kawasaki-massage-guide/',
+      },
+    ],
+  },
 ];
 
 export const FEATURED_POSTS: ArticleItem[] = [

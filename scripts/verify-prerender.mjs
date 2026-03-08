@@ -85,6 +85,12 @@ const routes = [
     mustIncludeAny: ['<h1', 'ベトナム式マッサージ', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/vietnamese-massage-kawasaki/',
   },
+  {
+    route: '/blog/kawasaki-massage-guide/',
+    file: path.join(DIST_DIR, 'blog', 'kawasaki-massage-guide', 'index.html'),
+    mustIncludeAny: ['<h1', '川崎', 'マッサージ', 'ポイント'],
+    canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-massage-guide/',
+  },
 ];
 
 const fail = (msg) => {

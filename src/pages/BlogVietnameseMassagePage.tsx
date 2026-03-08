@@ -113,6 +113,16 @@ export const BlogVietnameseMassagePage: React.FC = () => {
                 </p>
               </div>
             </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-serif tracking-wide">あわせて読みたい</h2>
+              <Link
+                to="/blog/kawasaki-massage-guide/"
+                className="inline-block px-6 py-3 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.25em] font-bold hover:opacity-70"
+              >
+                川崎でマッサージを選ぶポイントを読む
+              </Link>
+            </section>
           </section>
 
           <section className="mt-16 p-10 bg-white border border-gray-100 shadow-sm rounded-sm text-center space-y-5">
