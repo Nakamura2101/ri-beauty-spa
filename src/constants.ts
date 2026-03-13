@@ -41,6 +41,12 @@ export const NAV_ITEMS = [
         labelJp: '川崎マッサージガイド',
         href: '/blog/kawasaki-massage-guide/',
       },
+      {
+        id: 'blog-kawasaki-mens-massage',
+        labelEn: "KAWASAKI MEN'S MASSAGE",
+        labelJp: '川崎メンズマッサージ',
+        href: '/blog/kawasaki-mens-massage/',
+      },
     ],
   },
 ];

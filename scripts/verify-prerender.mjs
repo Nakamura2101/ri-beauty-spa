@@ -91,6 +91,12 @@ const routes = [
     mustIncludeAny: ['<h1', '川崎', 'マッサージ', 'ポイント'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-massage-guide/',
   },
+  {
+    route: '/blog/kawasaki-mens-massage/',
+    file: path.join(DIST_DIR, 'blog', 'kawasaki-mens-massage', 'index.html'),
+    mustIncludeAny: ['<h1', 'メンズ', '川崎', 'FAQ'],
+    canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-mens-massage/',
+  },
 ];
 
 const fail = (msg) => {
