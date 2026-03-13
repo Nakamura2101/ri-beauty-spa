@@ -84,7 +84,7 @@ export const Navbar: React.FC = () => {
                 {/* Dropdown Menu */}
                 {item.subItems && (
                   <div className={`absolute left-0 top-full pt-4 transition-all duration-300 ${activeDropdown === item.href ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
-                    <div className="bg-white shadow-2xl border border-gray-50 py-4 min-w-[260px] rounded-sm">
+                    <div className="bg-white shadow-2xl border border-gray-50 pt-4 pb-6 min-w-[260px] rounded-sm">
                       {item.subItems.map((sub) => (
                         <NavLink
                           key={sub.id}
@@ -94,7 +94,9 @@ export const Navbar: React.FC = () => {
                         >
                           <div className="flex flex-col">
                             <span className="text-[11px] uppercase tracking-[0.3em] text-black">{sub.labelEn}</span>
-                            <span className="text-[15px] tracking-widest text-black font-medium">{sub.labelJp}</span>
+                            <span className={`text-black font-medium ${sub.id === 'kawasaki-massage' ? 'text-[14px] tracking-wide normal-case' : 'text-[15px] tracking-widest'}`}>
+                              {sub.labelJp}
+                            </span>
                           </div>
                         </NavLink>
                       ))}
@@ -141,10 +143,12 @@ export const Navbar: React.FC = () => {
                       key={sub.id}
                       to={sub.href}
                       onClick={closeMenu}
-                      className="flex flex-col items-center p-3 bg-gray-50/50 rounded-sm"
+                      className={`flex flex-col items-center p-3 bg-gray-50/50 rounded-sm ${sub.id === 'kawasaki-massage' ? 'col-span-2' : ''}`}
                     >
                       <span className="text-[11px] uppercase tracking-[0.2em] text-black font-bold">{sub.labelEn}</span>
-                      <span className="text-base tracking-widest mt-1 font-medium text-black">{sub.labelJp}</span>
+                      <span className={`mt-1 font-medium text-black text-center ${sub.id === 'kawasaki-massage' ? 'text-sm tracking-wide normal-case' : 'text-base tracking-widest'}`}>
+                        {sub.labelJp}
+                      </span>
                     </NavLink>
                   ))}
                 </div>

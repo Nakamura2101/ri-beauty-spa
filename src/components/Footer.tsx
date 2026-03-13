@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
@@ -13,6 +14,12 @@ export const Footer: React.FC = () => {
           <div className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold">
             © {new Date().getFullYear()} Ri Beauty Spa. All Rights Reserved.
           </div>
+          <Link
+            to="/kawasaki-massage/"
+            className="text-[11px] text-gray-500 hover:text-spa-green transition-colors underline underline-offset-4"
+          >
+            川崎のマッサージ・リラクゼーションのご案内
+          </Link>
           <div className="flex space-x-6">
              <a href="#" className="text-gray-400 hover:text-spa-green transition-colors">
                 <span className="sr-only">Instagram</span>
