@@ -25,11 +25,11 @@ export const KawasakiMassagePage: React.FC = () => {
             telephone: '[PHONE]',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: '[ADDRESS_STREET]',
-              addressLocality: '[ADDRESS_LOCALITY]',
-              addressRegion: '[ADDRESS_REGION]',
-              postalCode: '[ADDRESS_POSTAL_CODE]',
-              addressCountry: '[ADDRESS_COUNTRY]',
+              streetAddress: '南幸町2-10-12-101',
+              addressLocality: '川崎市幸区',
+              addressRegion: '神奈川県',
+              postalCode: '212-0016',
+              addressCountry: 'JP',
             },
             geo: {
               '@type': 'GeoCoordinates',
@@ -92,6 +92,9 @@ export const KawasakiMassagePage: React.FC = () => {
             <h1 className="text-3xl md:text-5xl font-serif leading-tight tracking-wide max-w-4xl mx-auto">
               頑張る自分へのご褒美に、心ほどけるひとときを。
             </h1>
+            <p className="text-lg md:text-xl text-spa-deep/85 leading-relaxed max-w-3xl mx-auto text-center">
+              川崎でマッサージ・リラクゼーションをお探しの方へ。
+            </p>
             <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto text-justify md:text-center">
               川崎でマッサージ・リラクゼーションをお探しの方へ。目的に合わせた選び方と、初めての方でも安心できる流れをご案内します。
             </p>
@@ -142,6 +145,9 @@ export const KawasakiMassagePage: React.FC = () => {
                 当店では、はじめての方にも安心していただけるよう、状態やお好みを伺いながら無理のないご提案を行います。
               </p>
               <p className="text-gray-700 leading-relaxed">
+                状態やお好みを伺い、無理のないご提案で整える時間をご用意します。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
                 気になる点があれば、予約時にお気軽にご相談ください。
               </p>
             </section>
@@ -166,12 +172,12 @@ export const KawasakiMassagePage: React.FC = () => {
                 空き状況を確認して予約する
               </a>
               <p className="text-gray-700 leading-relaxed">当日予約：空き状況によります（予約ページをご確認ください）</p>
-              <p className="text-gray-700 leading-relaxed">
-                アクセス：
-                <Link to="/access/" className="underline underline-offset-4 hover:opacity-70 ml-1">
-                  アクセスはこちら
-                </Link>
-              </p>
+              <Link
+                to="/access/"
+                className="inline-block px-6 py-3 bg-white border border-gray-200 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.2em] font-bold text-black hover:text-spa-green hover:border-spa-green transition-all"
+              >
+                地図・アクセスはこちら
+              </Link>
             </section>
 
             <section className="bg-white border border-gray-100 shadow-sm rounded-sm p-7 md:p-9 space-y-5">
