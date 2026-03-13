@@ -89,6 +89,11 @@ export const BlogKawasakiMassageGuidePage: React.FC = () => {
               <p className="text-gray-700 text-justify">
                 川崎でマッサージを受けたいと思ったとき、店選びで迷う方は少なくありません。ここでは、目的に合う選び方と予約前に確認したいポイント、そして施術を心地よく受けるコツを短くまとめました。まずは気軽にチェックしてみてください。
               </p>
+              <p className="text-gray-700">
+                <Link to="/kawasaki-massage/" className="underline underline-offset-4 hover:opacity-70">
+                  予約はこちら：川崎のマッサージ・リラクゼーション案内
+                </Link>
+              </p>
               <a
                 href={SQUARE_BOOKING_LINK}
                 target="_blank"

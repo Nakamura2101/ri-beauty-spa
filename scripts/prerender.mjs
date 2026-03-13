@@ -28,6 +28,7 @@ const REQUIRED_ROUTES = [
   '/blog/vietnamese-massage-kawasaki/',
   '/blog/kawasaki-massage-guide/',
   '/blog/kawasaki-mens-massage/',
+  '/kawasaki-massage/',
 ];
 
 const log = (...args) => console.log('[prerender]', ...args);

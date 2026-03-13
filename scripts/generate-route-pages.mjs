@@ -43,6 +43,11 @@ const ROUTES = [
     title: 'Contact｜Ri Beauty Spa & Wellness 川崎',
     description: 'お問い合わせページ。ご予約やご質問はこちらからお気軽にご連絡ください。',
   },
+  {
+    path: '/kawasaki-massage/',
+    title: '川崎のマッサージ・リラクゼーションならRi Beauty Spa｜上質な癒し・予約はこちら',
+    description: '川崎でマッサージ・リラクゼーションをお探しの方へ。お疲れに合わせたご提案、初回の流れ、予約・アクセスを上質にご案内。空き状況の確認はこちら。',
+  },
 ];
 
 const ensureDir = async (dirPath) => {

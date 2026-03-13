@@ -19,6 +19,7 @@ import { ContactPage } from './pages/ContactPage';
 import { BlogVietnameseMassagePage } from './pages/BlogVietnameseMassagePage';
 import { BlogKawasakiMassageGuidePage } from './pages/BlogKawasakiMassageGuidePage';
 import { BlogKawasakiMensMassagePage } from './pages/BlogKawasakiMensMassagePage';
+import { KawasakiMassagePage } from './pages/KawasakiMassagePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 const PrerenderReady: React.FC = () => {
@@ -79,6 +80,9 @@ const App: React.FC = () => {
         <Route path="/blog/kawasaki-massage-guide/" element={<BlogKawasakiMassageGuidePage />} />
         <Route path="/blog/kawasaki-mens-massage" element={<BlogKawasakiMensMassagePage />} />
         <Route path="/blog/kawasaki-mens-massage/" element={<BlogKawasakiMensMassagePage />} />
+
+        <Route path="/kawasaki-massage" element={<KawasakiMassagePage />} />
+        <Route path="/kawasaki-massage/" element={<KawasakiMassagePage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

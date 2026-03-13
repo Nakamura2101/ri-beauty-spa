@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { BodyCareDetail } from '../components/BodyCareDetail';
 import { SITE_ORIGIN } from '../constants';
@@ -33,6 +33,16 @@ export const BodyWellnessPage: React.FC = () => {
       />
 
       <BodyCareDetail onBack={() => navigate('/services/')} />
+
+      <section className="pb-10 bg-[#fdfdfb]">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <p className="text-gray-700 text-sm md:text-base">
+            <Link to="/kawasaki-massage/" className="underline underline-offset-4 hover:opacity-70">
+              川崎でマッサージをお探しの方へ →
+            </Link>
+          </p>
+        </div>
+      </section>
     </>
   );
 };

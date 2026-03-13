@@ -21,6 +21,7 @@ export const NAV_ITEMS = [
       { id: 'body', labelEn: 'BODY WELLNESS', labelJp: 'ボディケア', href: '/services/body-wellness/' },
       { id: 'skin', labelEn: 'SKIN THERAPY', labelJp: 'スキンケア', href: '/services/skin-therapy/' },
       { id: 'rituals', labelEn: 'HERBAL RITUALS', labelJp: 'ハーブの儀式', href: '/services/herbal-rituals/' },
+      { id: 'kawasaki-massage', labelEn: 'KAWASAKI MASSAGE', labelJp: '川崎マッサージ', href: '/kawasaki-massage/' },
     ]
   },
   { labelEn: 'CORPORATE', labelJp: '法人向け', href: '/corporate/' },
