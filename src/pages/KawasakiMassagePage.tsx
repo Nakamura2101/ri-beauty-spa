@@ -99,7 +99,7 @@ export const KawasakiMassagePage: React.FC = () => {
               頑張る自分へのご褒美に、心ほどけるひとときを。
             </p>
             <p className="text-lg md:text-xl text-spa-deep/85 leading-relaxed max-w-3xl mx-auto text-center">
-              川崎でマッサージ・リラクゼーションをお探しの方へ。
+              日常の緊張をほどき、静かに整える時間を。
             </p>
             <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
               目的に合わせた選び方と、初めての方でも安心できる流れをご案内します。
