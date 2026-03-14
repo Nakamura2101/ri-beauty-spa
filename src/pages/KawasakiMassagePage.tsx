@@ -90,16 +90,19 @@ export const KawasakiMassagePage: React.FC = () => {
           <header className="mb-16 md:mb-20 space-y-8 text-center">
             <p className="text-[10px] uppercase tracking-[0.5em] text-spa-green font-bold opacity-70">KAWASAKI MASSAGE</p>
             <h1 className="text-3xl md:text-5xl font-serif leading-tight tracking-wide max-w-4xl mx-auto">
-              川崎のマッサージ・リラクゼーション｜Ri Beauty Spa
+              川崎のマッサージ・リラクゼーション
             </h1>
-            <p className="text-2xl md:text-4xl font-serif leading-tight tracking-wide max-w-4xl mx-auto text-spa-deep/90">
+            <p className="text-sm md:text-lg uppercase tracking-[0.35em] text-spa-deep/75 font-medium max-w-4xl mx-auto">
+              Ri Beauty Spa
+            </p>
+            <p className="text-xl md:text-3xl font-serif leading-relaxed tracking-wide max-w-4xl mx-auto text-spa-deep/90">
               頑張る自分へのご褒美に、心ほどけるひとときを。
             </p>
             <p className="text-lg md:text-xl text-spa-deep/85 leading-relaxed max-w-3xl mx-auto text-center">
               川崎でマッサージ・リラクゼーションをお探しの方へ。
             </p>
-            <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto text-justify md:text-center">
-              川崎でマッサージ・リラクゼーションをお探しの方へ。目的に合わせた選び方と、初めての方でも安心できる流れをご案内します。
+            <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
+              目的に合わせた選び方と、初めての方でも安心できる流れをご案内します。
             </p>
             <a
               href={SQUARE_BOOKING_LINK}
