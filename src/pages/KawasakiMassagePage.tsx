@@ -7,8 +7,8 @@ export const KawasakiMassagePage: React.FC = () => {
   return (
     <>
       <Seo
-        title="川崎のマッサージ・リラクゼーションならRi Beauty Spa｜上質な癒し・予約はこちら"
-        description="川崎でマッサージ・リラクゼーションをお探しの方へ。お疲れに合わせたご提案、初回の流れ、予約・アクセスを上質にご案内。空き状況の確認はこちら。"
+        title="川崎のマッサージ・リラクゼーション｜Ri Beauty Spa｜予約・アクセス"
+        description="川崎でマッサージ・リラクゼーションをお探しの方へ。目的別の目安、初回の流れ、予約・アクセスを上質にご案内。空き状況の確認はこちら。"
         canonicalPath="/kawasaki-massage/"
         structuredData={[
           {
@@ -90,8 +90,11 @@ export const KawasakiMassagePage: React.FC = () => {
           <header className="mb-16 md:mb-20 space-y-8 text-center">
             <p className="text-[10px] uppercase tracking-[0.5em] text-spa-green font-bold opacity-70">KAWASAKI MASSAGE</p>
             <h1 className="text-3xl md:text-5xl font-serif leading-tight tracking-wide max-w-4xl mx-auto">
-              頑張る自分へのご褒美に、心ほどけるひとときを。
+              川崎のマッサージ・リラクゼーション｜Ri Beauty Spa
             </h1>
+            <p className="text-2xl md:text-4xl font-serif leading-tight tracking-wide max-w-4xl mx-auto text-spa-deep/90">
+              頑張る自分へのご褒美に、心ほどけるひとときを。
+            </p>
             <p className="text-lg md:text-xl text-spa-deep/85 leading-relaxed max-w-3xl mx-auto text-center">
               川崎でマッサージ・リラクゼーションをお探しの方へ。
             </p>
