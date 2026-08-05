@@ -44,20 +44,37 @@ const extractRouteComponentsFromApp = async () => {
   return map;
 };
 
+const git = (args) =>
+  execFileSync('git', args, {
+    cwd: PROJECT_ROOT,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'ignore'],
+  }).trim();
+
+/**
+ * In a shallow clone every file reports the tip commit as its last change, so
+ * per-file dates would silently collapse to a single build-time-like value for
+ * every URL — the exact false-freshness signal this script exists to avoid.
+ * Detect that up front and drop lastmod entirely instead.
+ */
+const hasUsableHistory = () => {
+  try {
+    if (git(['rev-parse', '--is-shallow-repository']) === 'true') return false;
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 /**
  * Last commit date (ISO 8601 with timezone) for a file, or null when git has no
- * answer — e.g. no repository, a shallow clone, or a not-yet-committed file.
- * Returning null is deliberate: omitting lastmod is better than publishing a
- * date that does not correspond to a real content change.
+ * trustworthy answer — no repository, shallow history, or a file that is not
+ * committed yet. Returning null is deliberate: omitting lastmod is better than
+ * publishing a date that does not correspond to a real content change.
  */
 const gitLastModified = (relativeFile) => {
   try {
-    const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', relativeFile], {
-      cwd: PROJECT_ROOT,
-      encoding: 'utf8',
-      stdio: ['ignore', 'pipe', 'ignore'],
-    }).trim();
-    return out || null;
+    return git(['log', '-1', '--format=%cI', '--', relativeFile]) || null;
   } catch {
     return null;
   }
@@ -100,11 +117,12 @@ const main = async () => {
 
   const routeComponents = await extractRouteComponentsFromApp();
   const lastmodCache = new Map();
+  const historyUsable = hasUsableHistory();
   let withoutLastmod = 0;
 
   const lastmodForPath = (p) => {
     const file = routeComponents.get(p);
-    if (!file) {
+    if (!file || !historyUsable) {
       withoutLastmod++;
       return null;
     }
