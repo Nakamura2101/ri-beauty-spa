@@ -205,6 +205,12 @@ export const BlogKawasakiMassageGuidePage: React.FC = () => {
                   ベトナム式マッサージの特徴を読む
                 </Link>
                 <Link
+                  to="/blog/kawasaki-yomogi-steam/"
+                  className="inline-block px-6 py-3 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.25em] font-bold hover:opacity-70"
+                >
+                  川崎のよもぎ蒸し（温活）を読む
+                </Link>
+                <Link
                   to="/services/body-wellness/"
                   className="inline-block px-6 py-3 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.25em] font-bold hover:opacity-70"
                 >

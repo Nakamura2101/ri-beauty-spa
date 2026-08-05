@@ -48,6 +48,12 @@ export const NAV_ITEMS = [
         labelJp: '川崎メンズマッサージ',
         href: '/blog/kawasaki-mens-massage/',
       },
+      {
+        id: 'blog-kawasaki-yomogi-steam',
+        labelEn: 'KAWASAKI YOMOGI STEAM',
+        labelJp: '川崎よもぎ蒸し',
+        href: '/blog/kawasaki-yomogi-steam/',
+      },
     ],
   },
 ];

@@ -98,6 +98,12 @@ const routes = [
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-mens-massage/',
   },
   {
+    route: '/blog/kawasaki-yomogi-steam/',
+    file: path.join(DIST_DIR, 'blog', 'kawasaki-yomogi-steam', 'index.html'),
+    mustIncludeAny: ['<h1', 'よもぎ蒸し', '川崎', 'FAQ'],
+    canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-yomogi-steam/',
+  },
+  {
     route: '/kawasaki-massage/',
     file: path.join(DIST_DIR, 'kawasaki-massage', 'index.html'),
     mustIncludeAny: ['<h1', '川崎', 'マッサージ', '予約'],
