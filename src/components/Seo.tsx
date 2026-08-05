@@ -6,7 +6,22 @@ type Props = {
   description: string;
   /** Canonical path (e.g. "/services/skin-therapy/") */
   canonicalPath?: string;
+  /**
+   * Representative image for social cards (e.g. "/images/herbal/YomogiSteaming.jpg").
+   * Absolute URLs are used as-is. Defaults to the site logo.
+   */
+  image?: string;
+  /** og:type. Defaults to "website"; article pages should pass "article". */
+  ogType?: string;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
+};
+
+const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/images/logo.png`;
+
+const toAbsoluteUrl = (src?: string) => {
+  if (!src) return DEFAULT_OG_IMAGE;
+  if (/^https?:\/\//i.test(src)) return src;
+  return `${SITE_ORIGIN}${src.startsWith('/') ? src : `/${src}`}`;
 };
 
 const normalizeTrailingSlash = (pathname: string) => {
@@ -75,8 +90,10 @@ const upsertJsonLd = (structuredData?: Record<string, unknown> | Array<Record<st
  * Note: This runs client-side. Google generally executes JS for indexing, but
  * if you ever need guaranteed SSR metadata, we’d add a server/SSR later.
  */
-export const Seo: React.FC<Props> = ({ title, description, canonicalPath, structuredData }) => {
+export const Seo: React.FC<Props> = ({ title, description, canonicalPath, image, ogType, structuredData }) => {
   useEffect(() => {
+    const socialImage = toAbsoluteUrl(image);
+
     document.title = title;
 
     upsertMeta({ name: 'description' }, description);
@@ -97,18 +114,18 @@ export const Seo: React.FC<Props> = ({ title, description, canonicalPath, struct
     // Keep OG tags in sync for sharing.
     upsertMeta({ property: 'og:title' }, title);
     upsertMeta({ property: 'og:description' }, description);
-    upsertMeta({ property: 'og:type' }, 'website');
+    upsertMeta({ property: 'og:type' }, ogType ?? 'website');
     upsertMeta({ property: 'og:url' }, canonicalUrl);
-    upsertMeta({ property: 'og:image' }, `${SITE_ORIGIN}/images/logo.png`);
+    upsertMeta({ property: 'og:image' }, socialImage);
 
     // Twitter cards.
     upsertMeta({ name: 'twitter:card' }, 'summary_large_image');
     upsertMeta({ name: 'twitter:title' }, title);
     upsertMeta({ name: 'twitter:description' }, description);
-    upsertMeta({ name: 'twitter:image' }, `${SITE_ORIGIN}/images/logo.png`);
+    upsertMeta({ name: 'twitter:image' }, socialImage);
 
     upsertJsonLd(structuredData);
-  }, [title, description, canonicalPath, structuredData]);
+  }, [title, description, canonicalPath, image, ogType, structuredData]);
 
   return null;
 };

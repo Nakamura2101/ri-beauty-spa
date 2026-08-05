@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
+// Representative image for this article (also rendered in the page body).
+const HERO_IMAGE = '/images/herbal/YomogiSteaming.jpg';
+
+// Dates are sourced from git history for this article, not from build time.
+// datePublished: commit f871112 (initial publication of this post).
+const DATE_PUBLISHED = '2026-08-05T09:26:52+09:00';
+// dateModified: post-release SEO audit (image + structured data completion).
+const DATE_MODIFIED = '2026-08-05T09:47:46+09:00';
+
 export const BlogKawasakiYomogiSteamPage: React.FC = () => {
   return (
     <>
@@ -10,6 +19,8 @@ export const BlogKawasakiYomogiSteamPage: React.FC = () => {
         title="川崎でよもぎ蒸しを受けるなら｜温活の流れ・初めての準備と選び方"
         description="川崎でよもぎ蒸しをお探しの方へ。ハーブの蒸気で内側から温めるケアの仕組み、当日の流れ、初めての方の準備、他のメニューとの組み合わせ方をわかりやすくご案内します。"
         canonicalPath="/blog/kawasaki-yomogi-steam/"
+        image={HERO_IMAGE}
+        ogType="article"
         structuredData={[
           {
             '@type': 'BlogPosting',
@@ -17,13 +28,24 @@ export const BlogKawasakiYomogiSteamPage: React.FC = () => {
             description:
               '川崎でよもぎ蒸しをお探しの方へ。ハーブの蒸気で内側から温めるケアの仕組み、当日の流れ、初めての方の準備、他のメニューとの組み合わせ方をわかりやすくご案内します。',
             mainEntityOfPage: `${SITE_ORIGIN}/blog/kawasaki-yomogi-steam/`,
+            image: {
+              '@type': 'ImageObject',
+              url: `${SITE_ORIGIN}${HERO_IMAGE}`,
+              width: 1024,
+              height: 768,
+            },
+            datePublished: DATE_PUBLISHED,
+            dateModified: DATE_MODIFIED,
+            inLanguage: 'ja-JP',
             author: {
               '@type': 'Organization',
               name: 'Ri Beauty Spa & Wellness',
+              url: `${SITE_ORIGIN}/`,
             },
             publisher: {
               '@type': 'Organization',
               name: 'Ri Beauty Spa & Wellness',
+              url: `${SITE_ORIGIN}/`,
               logo: {
                 '@type': 'ImageObject',
                 url: `${SITE_ORIGIN}/images/logo.png`,
@@ -85,6 +107,21 @@ export const BlogKawasakiYomogiSteamPage: React.FC = () => {
               ※当店の施術はリラクゼーションを目的とした一般的なサービスであり、医療行為ではありません。
             </p>
           </header>
+
+          <figure className="mb-16">
+            <div className="aspect-[4/3] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+              <img
+                src={HERO_IMAGE}
+                width={1024}
+                height={768}
+                alt="よもぎ蒸し用の椅子と専用ケープを身につけた人、よもぎの葉を描いたイラスト"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+              専用の椅子に座り、ハーブの蒸気で全身をやさしく温めます（イメージイラスト）。
+            </figcaption>
+          </figure>
 
           <section className="space-y-10 text-[17px] leading-relaxed">
             <section className="space-y-5">

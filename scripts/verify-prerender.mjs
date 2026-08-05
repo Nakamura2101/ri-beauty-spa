@@ -102,6 +102,12 @@ const routes = [
     file: path.join(DIST_DIR, 'blog', 'kawasaki-yomogi-steam', 'index.html'),
     mustIncludeAny: ['<h1', 'よもぎ蒸し', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-yomogi-steam/',
+    article: {
+      // Article pages must ship a complete BlogPosting and a representative
+      // social image (not the generic site logo).
+      ogType: 'article',
+      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
+    },
   },
   {
     route: '/kawasaki-massage/',
@@ -158,6 +164,53 @@ const main = async () => {
     const canonicalRe = new RegExp(`<link\\s+rel="canonical"\\s+href="${r.canonical.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}"\\s*/?>`, 'i');
     if (!canonicalRe.test(html)) {
       fail(`${r.route} canonical mismatch. Expected: ${r.canonical}`);
+    }
+
+    // 4) Article pages: complete BlogPosting + a representative social image.
+    if (r.article) {
+      const ogType = html.match(/<meta property="og:type" content="([^"]*)"/i)?.[1];
+      if (ogType !== r.article.ogType) {
+        fail(`${r.route} og:type is "${ogType}", expected "${r.article.ogType}"`);
+      }
+
+      const ogImage = html.match(/<meta property="og:image" content="([^"]*)"/i)?.[1] ?? '';
+      if (!ogImage || /\/images\/logo\.png$/i.test(ogImage)) {
+        fail(`${r.route} og:image should be a representative article image, got: ${ogImage || '(none)'}`);
+      }
+
+      const jsonLdRaw = html.match(/<script[^>]*id="seo-jsonld"[^>]*>([\s\S]*?)<\/script>/i)?.[1];
+      let blogPosting = null;
+      try {
+        const parsed = JSON.parse(jsonLdRaw ?? 'null');
+        const nodes = Array.isArray(parsed?.['@graph']) ? parsed['@graph'] : [parsed];
+        blogPosting = nodes.find((n) => n?.['@type'] === 'BlogPosting') ?? null;
+      } catch {
+        fail(`${r.route} JSON-LD is not valid JSON`);
+      }
+
+      if (!blogPosting) {
+        fail(`${r.route} missing BlogPosting JSON-LD`);
+      } else {
+        const missing = r.article.requiredBlogPostingFields.filter((f) => !blogPosting[f]);
+        if (missing.length) {
+          fail(`${r.route} BlogPosting missing field(s): ${missing.join(', ')}`);
+        }
+
+        // Dates must be ISO 8601 with an explicit timezone offset.
+        for (const field of ['datePublished', 'dateModified']) {
+          const value = blogPosting[field];
+          if (value && !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$/.test(value)) {
+            fail(`${r.route} BlogPosting.${field} is not ISO 8601 with timezone: ${value}`);
+          }
+        }
+
+        // The structured-data image must actually appear on the page.
+        const imageUrl = typeof blogPosting.image === 'string' ? blogPosting.image : blogPosting.image?.url;
+        const imagePath = imageUrl ? imageUrl.replace('https://www.ri-beauty-spa.com', '') : '';
+        if (!imagePath || !html.includes(`src="${imagePath}"`)) {
+          fail(`${r.route} BlogPosting.image is not rendered on the page: ${imageUrl ?? '(none)'}`);
+        }
+      }
     }
 
     ok(`${r.route} => ${path.relative(PROJECT_ROOT, r.file)}`);

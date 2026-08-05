@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 const PROJECT_ROOT = process.cwd();
 const APP_ROUTES_FILE = path.resolve(PROJECT_ROOT, 'src', 'App.tsx');
@@ -28,6 +29,40 @@ const extractRoutePathsFromApp = async () => {
   return routes;
 };
 
+/**
+ * Map each route to the page component that renders it, so lastmod can be
+ * derived from that file's real history instead of the build clock.
+ */
+const extractRouteComponentsFromApp = async () => {
+  const src = await fs.readFile(APP_ROUTES_FILE, 'utf8');
+  const map = new Map();
+  const re = /<Route\s+path=\"([^\"]+)\"\s+element=\{<(\w+)\s*\/>\}/g;
+  let m;
+  while ((m = re.exec(src))) {
+    map.set(normalizeTrailingSlash(m[1]), path.join('src', 'pages', `${m[2]}.tsx`));
+  }
+  return map;
+};
+
+/**
+ * Last commit date (ISO 8601 with timezone) for a file, or null when git has no
+ * answer — e.g. no repository, a shallow clone, or a not-yet-committed file.
+ * Returning null is deliberate: omitting lastmod is better than publishing a
+ * date that does not correspond to a real content change.
+ */
+const gitLastModified = (relativeFile) => {
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', relativeFile], {
+      cwd: PROJECT_ROOT,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    return out || null;
+  } catch {
+    return null;
+  }
+};
+
 const priorityForPath = (p) => {
   if (p === '/') return 1.0;
   if (p === '/services/') return 0.9;
@@ -41,13 +76,6 @@ const changefreqForPath = (p) => {
   if (p === '/' || p === '/services/') return 'weekly';
   if (p.startsWith('/services/')) return 'weekly';
   return 'weekly';
-};
-
-const toYyyyMmDd = (d) => {
-  const yyyy = d.getUTCFullYear();
-  const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
-  const dd = String(d.getUTCDate()).padStart(2, '0');
-  return `${yyyy}-${mm}-${dd}`;
 };
 
 const main = async () => {
@@ -70,15 +98,31 @@ const main = async () => {
       return a.localeCompare(b);
     });
 
-  const lastmod = toYyyyMmDd(new Date());
+  const routeComponents = await extractRouteComponentsFromApp();
+  const lastmodCache = new Map();
+  let withoutLastmod = 0;
+
+  const lastmodForPath = (p) => {
+    const file = routeComponents.get(p);
+    if (!file) {
+      withoutLastmod++;
+      return null;
+    }
+    if (!lastmodCache.has(file)) lastmodCache.set(file, gitLastModified(file));
+    const value = lastmodCache.get(file);
+    if (!value) withoutLastmod++;
+    return value;
+  };
 
   const urlEntries = canonicalPaths
     .map((p) => {
       const loc = `${SITE_ORIGIN}${p}`;
       const changefreq = changefreqForPath(p);
       const priority = priorityForPath(p).toFixed(1);
+      const lastmod = lastmodForPath(p);
+      const lastmodLine = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : '';
 
-      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+      return `  <url>\n    <loc>${loc}</loc>${lastmodLine}\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
     })
     .join('\n\n');
 
@@ -86,7 +130,10 @@ const main = async () => {
 
   await fs.mkdir(path.dirname(OUT_FILE), { recursive: true });
   await fs.writeFile(OUT_FILE, xml, 'utf8');
-  console.log(`[generate-sitemap] Wrote ${path.relative(PROJECT_ROOT, OUT_FILE)} (${canonicalPaths.length} URL(s))`);
+  const detail = withoutLastmod ? `, ${withoutLastmod} without lastmod` : '';
+  console.log(
+    `[generate-sitemap] Wrote ${path.relative(PROJECT_ROOT, OUT_FILE)} (${canonicalPaths.length} URL(s)${detail})`
+  );
 };
 
 await main();

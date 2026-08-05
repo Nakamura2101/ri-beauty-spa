@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Full history so scripts/generate-sitemap.mjs can derive each URL's
+          # lastmod from the real commit date of its page component.
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
