@@ -8,11 +8,11 @@ const HERO_IMAGE = '/images/SKINTHERAPY/RadiantGlowPeel.jpg';
 // Secondary image used in the body-care section.
 const BODY_IMAGE = '/images/SKINTHERAPY/BodyRenewalHerbalPeel.png';
 
-// Dates reflect this article's real authoring time, not the build clock.
-// datePublished: initial publication of this post.
-const DATE_PUBLISHED = '2026-08-08T00:23:32+09:00';
-// dateModified: same as publication — no post-release edit has happened yet.
-const DATE_MODIFIED = '2026-08-08T00:23:32+09:00';
+// Dates come from this article's real git history, not the build clock.
+// datePublished: commit e950023 (initial publication of this post).
+const DATE_PUBLISHED = '2026-08-08T00:37:23+09:00';
+// dateModified: truthfulness pass removing unsupported popularity wording.
+const DATE_MODIFIED = '2026-08-08T06:52:26+09:00';
 
 const TITLE = '川崎でハーブピーリングを受けるなら｜施術の流れと肌悩み別コースの選び方';
 const DESCRIPTION =
@@ -157,7 +157,7 @@ export const BlogKawasakiHerbalPeelPage: React.FC = () => {
               </p>
               <h3 className="text-xl font-serif tracking-wide">サロンでのフェイシャルとの位置づけ</h3>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>クレンジングと保湿を中心とした「ベーシックフェイシャル」よりも、肌の質感の変化を目的に選ばれやすいメニュー</li>
+                <li>クレンジングと保湿を中心とした「ベーシックフェイシャル」とは異なり、肌の質感の変化を目的としたメニュー</li>
                 <li>肌のターンオーバー（生まれ変わりの流れ）をサポートするという考え方のケア</li>
                 <li>顔だけでなく、背中などのボディにも対応したコースがある</li>
               </ul>
@@ -167,7 +167,7 @@ export const BlogKawasakiHerbalPeelPage: React.FC = () => {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-serif tracking-wide">2. こんな肌悩みの方に選ばれています（川崎でフェイシャルをお探しの方へ）</h2>
+              <h2 className="text-2xl font-serif tracking-wide">2. こんな肌悩みの方に向いています（川崎でフェイシャルをお探しの方へ）</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
                 <li>肌のくすみが気になり、明るい印象を目指したい方</li>
                 <li>ニキビ跡や肌荒れが気になり、肌の調子を整えたい方</li>
@@ -175,7 +175,7 @@ export const BlogKawasakiHerbalPeelPage: React.FC = () => {
                 <li>背中・二の腕・脇など、自分では手の届きにくい部位をケアしたい方</li>
               </ul>
               <p className="text-gray-700 text-justify">
-                川崎で「マッサージだけでなく肌のケアも一緒に相談したい」という方から選ばれやすいメニューです。
+                川崎で「マッサージだけでなく肌のケアも一緒に相談したい」という場合にも、検討いただけるメニューです。
                 ボディのケアと迷う場合は、
                 <Link to="/blog/kawasaki-massage-guide/" className="underline underline-offset-4 hover:opacity-70">
                   川崎でマッサージを選ぶときのポイント
@@ -196,12 +196,12 @@ export const BlogKawasakiHerbalPeelPage: React.FC = () => {
               <h3 className="text-xl font-serif tracking-wide">ニキビ肌ケアコース（Acne Care Peel）</h3>
               <p className="text-gray-700 text-justify">
                 トラブルの起きやすい肌を落ち着かせ、健やかな状態へ整えていきたい方向けのコースです。
-                ニキビ跡や肌荒れが気になる方にお選びいただいています。
+                ニキビ跡や肌荒れが気になる場合に検討いただけます。
               </p>
               <h3 className="text-xl font-serif tracking-wide">ボディ・リニューアル（背中・ヒップ・二の腕・脇）</h3>
               <p className="text-gray-700 text-justify">
                 背中のニキビや、ヒップ・二の腕・脇の黒ずみなど、自分では届きにくい部位を集中してケアするコースです。
-                露出が増える季節の前に選ばれることの多いメニューです。
+                露出が増える季節の前のケアとしても検討できるコースです。
               </p>
               <figure className="pt-2 max-w-3xl mx-auto">
                 <div className="aspect-[4/3] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
