@@ -11,8 +11,9 @@ const BODY_IMAGE = '/images/SKINTHERAPY/BodyRenewalHerbalPeel.png';
 // Dates come from this article's real git history, not the build clock.
 // datePublished: commit e950023 (initial publication of this post).
 const DATE_PUBLISHED = '2026-08-08T00:37:23+09:00';
-// dateModified: truthfulness pass removing unsupported popularity wording.
-const DATE_MODIFIED = '2026-08-08T06:52:26+09:00';
+// dateModified: commit 1b7fd95 (truthfulness pass that rewrote the unsupported
+// popularity wording). This is the commit in which the article text changed.
+const DATE_MODIFIED = '2026-08-08T06:55:09+09:00';
 
 const TITLE = '川崎でハーブピーリングを受けるなら｜施術の流れと肌悩み別コースの選び方';
 const DESCRIPTION =
