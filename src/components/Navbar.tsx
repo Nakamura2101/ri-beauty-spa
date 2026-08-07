@@ -117,44 +117,48 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Drawer */}
-      <div className={`lg:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center transition-all duration-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
-        <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-black p-2">
+      <div className={`lg:hidden fixed inset-0 bg-white z-40 transition-all duration-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
+        <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 z-10 text-black p-2">
            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-8 h-8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <div className="flex flex-col items-center space-y-12 w-full px-12">
-          {NAV_ITEMS.map((item) => (
-            <div key={item.href} className="flex flex-col items-center w-full">
-              <NavLink
-                className="flex flex-col items-center py-2 border-b border-gray-50 w-full"
-                to={item.href}
-                onClick={closeMenu}
-              >
-                <span className="flex items-center gap-2 text-[12px] uppercase tracking-[0.4em] font-bold text-black">
-                  <span>{item.labelEn}</span>
-                </span>
-                <span className="text-xl tracking-widest font-medium mt-1 text-black">{item.labelJp}</span>
-              </NavLink>
-              {item.subItems && (
-                <div className="grid grid-cols-2 gap-4 mt-6 w-full">
-                  {item.subItems.map(sub => (
-                    <NavLink
-                      key={sub.id}
-                      to={sub.href}
-                      onClick={closeMenu}
-                      className={`flex flex-col items-center p-3 bg-gray-50/50 rounded-sm ${sub.id === 'kawasaki-massage' ? 'col-span-2' : ''}`}
-                    >
-                      <span className="text-[11px] uppercase tracking-[0.2em] text-black font-bold">{sub.labelEn}</span>
-                      <span className={`mt-1 font-medium text-black text-center ${sub.id === 'kawasaki-massage' ? 'text-sm tracking-wide normal-case' : 'text-base tracking-widest'}`}>
-                        {sub.labelJp}
-                      </span>
-                    </NavLink>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+        {/* Scroll the entries, not the panel: the close button stays pinned even
+            when the menu is taller than a small phone viewport. */}
+        <div className="h-full overflow-y-auto">
+          <div className="flex flex-col items-center justify-center min-h-full space-y-12 w-full px-12 py-24">
+            {NAV_ITEMS.map((item) => (
+              <div key={item.href} className="flex flex-col items-center w-full">
+                <NavLink
+                  className="flex flex-col items-center py-2 border-b border-gray-50 w-full"
+                  to={item.href}
+                  onClick={closeMenu}
+                >
+                  <span className="flex items-center gap-2 text-[12px] uppercase tracking-[0.4em] font-bold text-black">
+                    <span>{item.labelEn}</span>
+                  </span>
+                  <span className="text-xl tracking-widest font-medium mt-1 text-black">{item.labelJp}</span>
+                </NavLink>
+                {item.subItems && (
+                  <div className="grid grid-cols-2 gap-4 mt-6 w-full">
+                    {item.subItems.map(sub => (
+                      <NavLink
+                        key={sub.id}
+                        to={sub.href}
+                        onClick={closeMenu}
+                        className={`flex flex-col items-center p-3 bg-gray-50/50 rounded-sm ${sub.id === 'kawasaki-massage' ? 'col-span-2' : ''}`}
+                      >
+                        <span className="text-[11px] uppercase tracking-[0.2em] text-black font-bold">{sub.labelEn}</span>
+                        <span className={`mt-1 font-medium text-black text-center ${sub.id === 'kawasaki-massage' ? 'text-sm tracking-wide normal-case' : 'text-base tracking-widest'}`}>
+                          {sub.labelJp}
+                        </span>
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </nav>

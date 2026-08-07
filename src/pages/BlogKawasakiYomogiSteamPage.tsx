@@ -270,6 +270,12 @@ export const BlogKawasakiYomogiSteamPage: React.FC = () => {
                   ベトナム式マッサージの特徴を読む
                 </Link>
                 <Link
+                  to="/blog/kawasaki-herbal-peel/"
+                  className="inline-block px-6 py-3 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.25em] font-bold hover:opacity-70"
+                >
+                  川崎のハーブピーリングを読む
+                </Link>
+                <Link
                   to="/kawasaki-massage/"
                   className="inline-block px-6 py-3 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.25em] font-bold hover:opacity-70"
                 >

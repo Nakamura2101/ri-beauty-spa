@@ -54,6 +54,12 @@ export const NAV_ITEMS = [
         labelJp: '川崎よもぎ蒸し',
         href: '/blog/kawasaki-yomogi-steam/',
       },
+      {
+        id: 'blog-kawasaki-herbal-peel',
+        labelEn: 'KAWASAKI HERBAL PEEL',
+        labelJp: '川崎ハーブピーリング',
+        href: '/blog/kawasaki-herbal-peel/',
+      },
     ],
   },
 ];

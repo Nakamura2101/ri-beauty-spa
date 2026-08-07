@@ -110,6 +110,16 @@ const routes = [
     },
   },
   {
+    route: '/blog/kawasaki-herbal-peel/',
+    file: path.join(DIST_DIR, 'blog', 'kawasaki-herbal-peel', 'index.html'),
+    mustIncludeAny: ['<h1', 'ハーブピーリング', '川崎', 'FAQ'],
+    canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-herbal-peel/',
+    article: {
+      ogType: 'article',
+      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
+    },
+  },
+  {
     route: '/kawasaki-massage/',
     file: path.join(DIST_DIR, 'kawasaki-massage', 'index.html'),
     mustIncludeAny: ['<h1', '川崎', 'マッサージ', '予約'],

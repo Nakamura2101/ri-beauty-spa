@@ -45,6 +45,12 @@ export const FacialPage: React.FC = () => {
                 </Link>
               </div>
 
+              <p className="mt-5 text-gray-700 font-light leading-relaxed">
+                <Link to="/blog/kawasaki-herbal-peel/" className="underline underline-offset-4 hover:opacity-70">
+                  川崎でハーブピーリングを受けるなら｜施術の流れとコースの選び方 →
+                </Link>
+              </p>
+
               <div className="mt-8">
                 <a
                   href={SQUARE_BOOKING_LINK}
