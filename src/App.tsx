@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Footer } from './components/Footer';
+import { SQUARE_BOOKING_LINK } from './constants';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
@@ -42,10 +43,62 @@ const PrerenderReady: React.FC = () => {
   return null;
 };
 
+// Google Ads conversion action "Book appointment". This counts a click through to the
+// Square booking site, NOT a completed booking - the site has no visibility into what
+// happens on Square. No value/currency: a click is not revenue.
+const BOOKING_CONVERSION_SEND_TO = 'AW-18377146199/lnS3CMf8_N0cENf-87pE';
+
+type GtagFn = (command: 'event', eventName: string, params: Record<string, string>) => void;
+
+// Compare against SQUARE_BOOKING_LINK exactly rather than by prefix, so only real
+// booking CTAs count - never internal, tel: or Google Maps links.
+const normalizeBookingUrl = (raw: string): string => {
+  try {
+    const url = new URL(raw, window.location.href);
+    return `${url.origin}${url.pathname.replace(/\/+$/, '')}`;
+  } catch {
+    return '';
+  }
+};
+
+const BookingConversionTracker: React.FC = () => {
+  useEffect(() => {
+    const bookingUrl = normalizeBookingUrl(SQUARE_BOOKING_LINK);
+
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      // closest() also resolves clicks that land on an icon or label inside the CTA.
+      const anchor = target.closest('a');
+      if (!anchor) return;
+      if (normalizeBookingUrl(anchor.getAttribute('href') ?? '') !== bookingUrl) return;
+
+      const gtag = (window as unknown as { gtag?: GtagFn }).gtag;
+      if (typeof gtag !== 'function') return;
+
+      try {
+        gtag('event', 'conversion', { send_to: BOOKING_CONVERSION_SEND_TO });
+      } catch {
+        // Tracking must never break the booking flow.
+      }
+    };
+
+    // A single delegated listener covers every booking CTA on every route, so no call
+    // site carries gtag code and one click can only ever emit one event. Navigation is
+    // untouched: no preventDefault, no event_callback, nothing awaits the network.
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, []);
+
+  return null;
+};
+
 const App: React.FC = () => {
   return (
     <div className="min-h-screen">
       <PrerenderReady />
+      <BookingConversionTracker />
       <ScrollToTop />
       <Navbar />
 
@@ -98,7 +151,7 @@ const App: React.FC = () => {
       {/* Floating Booking Action */}
       <div className="fixed bottom-8 right-8 z-40">
         <a 
-          href="https://ribeautyspa.square.site/" 
+          href={SQUARE_BOOKING_LINK}
           target="_blank" 
           rel="noopener noreferrer"
           className="bg-spa-soft/90 backdrop-blur-md text-white flex items-center gap-4 px-8 py-5 rounded-full shadow-2xl hover:bg-spa-green hover:scale-105 transition-all duration-300 group border border-white/20"
