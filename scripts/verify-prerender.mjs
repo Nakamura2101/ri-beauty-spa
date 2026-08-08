@@ -176,7 +176,19 @@ const main = async () => {
       fail(`${r.route} canonical mismatch. Expected: ${r.canonical}`);
     }
 
-    // 4) Article pages: complete BlogPosting + a representative social image.
+    // 4) Google tag: exactly one loader, and no analytics scripts injected at
+    //    prerender time (those would carry the build-time localhost URL).
+    const gtagLoaders = html.match(/googletagmanager\.com\/gtag\/js\?id=AW-18377146199/gi) ?? [];
+    if (gtagLoaders.length !== 1) {
+      fail(`${r.route} must contain exactly 1 Google tag loader, found ${gtagLoaders.length}`);
+    }
+
+    const injectedAnalytics = html.match(/googleadservices\.com|doubleclick\.net|google-analytics\.com/gi) ?? [];
+    if (injectedAnalytics.length) {
+      fail(`${r.route} contains prerender-injected analytics scripts: ${[...new Set(injectedAnalytics)].join(', ')}`);
+    }
+
+    // 5) Article pages: complete BlogPosting + a representative social image.
     if (r.article) {
       const ogType = html.match(/<meta property="og:type" content="([^"]*)"/i)?.[1];
       if (ogType !== r.article.ogType) {

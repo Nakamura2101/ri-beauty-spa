@@ -214,6 +214,28 @@ const waitForPrerenderReady = async (page, timeoutMs = 15000) => {
 
 const escapeRegExp = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+// The Google tag lives in index.html, so it also runs inside the prerender
+// browser. Left alone it would (a) inject its own <script> tags into the DOM we
+// serialize — baking the build-time localhost URL into every shipped page — and
+// (b) send fake hits from the build machine. Block the requests: the static tag
+// from index.html still ends up in the output exactly once.
+const BLOCKED_ANALYTICS_HOSTS = [
+  'googletagmanager.com',
+  'google-analytics.com',
+  'googleadservices.com',
+  'doubleclick.net',
+];
+
+const blockAnalyticsRequests = async (page) => {
+  await page.setRequestInterception(true);
+  page.on('request', (request) => {
+    const url = request.url();
+    const blocked = BLOCKED_ANALYTICS_HOSTS.some((host) => url.includes(host));
+    if (blocked) request.abort().catch(() => {});
+    else request.continue().catch(() => {});
+  });
+};
+
 const waitForMeaningfulHtml = async (page, routePath, timeoutMs = 20000) => {
   // We consider the page "rendered" once:
   // - there is at least one <h1> inside #root
@@ -258,6 +280,8 @@ const main = async () => {
   });
   try {
     const page = await browser.newPage();
+
+    await blockAnalyticsRequests(page);
 
     // Flag the app so it can fire a deterministic "ready" event.
     await page.evaluateOnNewDocument(() => {
