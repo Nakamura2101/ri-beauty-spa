@@ -60,6 +60,12 @@ export const NAV_ITEMS = [
         labelJp: '川崎ハーブピーリング',
         href: '/blog/kawasaki-herbal-peel/',
       },
+      {
+        id: 'blog-kawasaki-aroma-lymphatic',
+        labelEn: 'KAWASAKI AROMA LYMPHATIC',
+        labelJp: '川崎アロマリンパ',
+        href: '/blog/kawasaki-aroma-lymphatic-massage/',
+      },
     ],
   },
 ];

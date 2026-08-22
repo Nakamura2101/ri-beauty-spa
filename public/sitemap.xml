@@ -22,8 +22,14 @@
   </url>
 
   <url>
+    <loc>https://www.ri-beauty-spa.com/blog/kawasaki-aroma-lymphatic-massage/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://www.ri-beauty-spa.com/blog/kawasaki-herbal-peel/</loc>
-    <lastmod>2026-08-08T06:55:09+09:00</lastmod>
+    <lastmod>2026-08-08T06:56:32+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

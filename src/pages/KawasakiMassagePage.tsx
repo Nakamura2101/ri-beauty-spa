@@ -233,6 +233,12 @@ export const KawasakiMassagePage: React.FC = () => {
                 >
                   川崎のよもぎ蒸し（温活）を読む
                 </Link>
+                <Link
+                  to="/blog/kawasaki-aroma-lymphatic-massage/"
+                  className="inline-block px-6 py-3 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.25em] font-bold hover:opacity-70"
+                >
+                  川崎のアロマリンパマッサージを読む
+                </Link>
               </div>
             </section>
           </section>

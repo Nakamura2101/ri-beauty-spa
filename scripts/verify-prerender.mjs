@@ -120,6 +120,16 @@ const routes = [
     },
   },
   {
+    route: '/blog/kawasaki-aroma-lymphatic-massage/',
+    file: path.join(DIST_DIR, 'blog', 'kawasaki-aroma-lymphatic-massage', 'index.html'),
+    mustIncludeAny: ['<h1', 'アロマリンパ', '川崎', 'FAQ'],
+    canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-aroma-lymphatic-massage/',
+    article: {
+      ogType: 'article',
+      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
+    },
+  },
+  {
     route: '/kawasaki-massage/',
     file: path.join(DIST_DIR, 'kawasaki-massage', 'index.html'),
     mustIncludeAny: ['<h1', '川崎', 'マッサージ', '予約'],

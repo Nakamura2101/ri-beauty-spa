@@ -22,6 +22,7 @@ import { BlogKawasakiMassageGuidePage } from './pages/BlogKawasakiMassageGuidePa
 import { BlogKawasakiMensMassagePage } from './pages/BlogKawasakiMensMassagePage';
 import { BlogKawasakiYomogiSteamPage } from './pages/BlogKawasakiYomogiSteamPage';
 import { BlogKawasakiHerbalPeelPage } from './pages/BlogKawasakiHerbalPeelPage';
+import { BlogKawasakiAromaLymphaticPage } from './pages/BlogKawasakiAromaLymphaticPage';
 import { KawasakiMassagePage } from './pages/KawasakiMassagePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
@@ -139,6 +140,8 @@ const App: React.FC = () => {
         <Route path="/blog/kawasaki-yomogi-steam/" element={<BlogKawasakiYomogiSteamPage />} />
         <Route path="/blog/kawasaki-herbal-peel" element={<BlogKawasakiHerbalPeelPage />} />
         <Route path="/blog/kawasaki-herbal-peel/" element={<BlogKawasakiHerbalPeelPage />} />
+        <Route path="/blog/kawasaki-aroma-lymphatic-massage" element={<BlogKawasakiAromaLymphaticPage />} />
+        <Route path="/blog/kawasaki-aroma-lymphatic-massage/" element={<BlogKawasakiAromaLymphaticPage />} />
 
         <Route path="/kawasaki-massage" element={<KawasakiMassagePage />} />
         <Route path="/kawasaki-massage/" element={<KawasakiMassagePage />} />
