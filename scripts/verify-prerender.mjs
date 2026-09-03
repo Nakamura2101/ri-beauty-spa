@@ -130,6 +130,16 @@ const routes = [
     },
   },
   {
+    route: '/blog/kawasaki-facial-guide/',
+    file: path.join(DIST_DIR, 'blog', 'kawasaki-facial-guide', 'index.html'),
+    mustIncludeAny: ['<h1', 'フェイシャル', '川崎', 'FAQ'],
+    canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-facial-guide/',
+    article: {
+      ogType: 'article',
+      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
+    },
+  },
+  {
     route: '/kawasaki-massage/',
     file: path.join(DIST_DIR, 'kawasaki-massage', 'index.html'),
     mustIncludeAny: ['<h1', '川崎', 'マッサージ', '予約'],

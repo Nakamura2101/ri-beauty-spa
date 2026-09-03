@@ -66,6 +66,12 @@ export const NAV_ITEMS = [
         labelJp: '川崎アロマリンパ',
         href: '/blog/kawasaki-aroma-lymphatic-massage/',
       },
+      {
+        id: 'blog-kawasaki-facial-guide',
+        labelEn: 'KAWASAKI FACIAL GUIDE',
+        labelJp: '川崎フェイシャル',
+        href: '/blog/kawasaki-facial-guide/',
+      },
     ],
   },
 ];
