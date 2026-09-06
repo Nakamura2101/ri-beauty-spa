@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
-const HERO_IMAGE = '/images/salon/reception-lounge.jpg';
-const ROOM_IMAGE = '/images/salon/treatment-room-warm.jpg';
-const UPPER_BODY_IMAGE = '/images/salon/shoulder-back-massage.jpg';
+const HERO_IMAGE = '/images/salon/reception-lounge.webp';
+const ROOM_IMAGE = '/images/salon/treatment-room-warm.webp';
+const UPPER_BODY_IMAGE = '/images/salon/shoulder-back-massage.webp';
 
 export const BlogKawasakiMensMassagePage: React.FC = () => {
   return (
@@ -131,8 +131,8 @@ export const BlogKawasakiMensMassagePage: React.FC = () => {
                 <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
                   <img
                     src={ROOM_IMAGE}
-                    width={2048}
-                    height={1152}
+                    width={1600}
+                    height={900}
                     loading="lazy"
                     alt="間接照明を落とした個室に、タオルを整えた施術ベッドが2台並んでいる様子"
                     className="w-full h-full object-cover"
@@ -158,8 +158,8 @@ export const BlogKawasakiMensMassagePage: React.FC = () => {
                 <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
                   <img
                     src={UPPER_BODY_IMAGE}
-                    width={2048}
-                    height={1152}
+                    width={1600}
+                    height={900}
                     loading="lazy"
                     alt="うつ伏せの状態で、施術者が首の付け根から肩にかけて両手でゆっくり圧をかけている様子"
                     className="w-full h-full object-cover"

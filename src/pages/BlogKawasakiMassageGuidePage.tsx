@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
-const HERO_IMAGE = '/images/salon/salon-exterior.jpg';
-const STAFF_IMAGE = '/images/salon/staff-preparing-room.jpg';
+const HERO_IMAGE = '/images/salon/salon-exterior.webp';
+const STAFF_IMAGE = '/images/salon/staff-preparing-room.webp';
 
 export const BlogKawasakiMassageGuidePage: React.FC = () => {
   return (
@@ -172,8 +172,8 @@ export const BlogKawasakiMassageGuidePage: React.FC = () => {
                 <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
                   <img
                     src={STAFF_IMAGE}
-                    width={2048}
-                    height={1152}
+                    width={1600}
+                    height={900}
                     loading="lazy"
                     alt="施術前の個室で、スタッフが施術ベッドのタオルを整えて準備している様子"
                     className="w-full h-full object-cover"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Seo } from '../components/Seo';
 
-const EXTERIOR_IMAGE = '/images/salon/salon-entrance.jpg';
+const EXTERIOR_IMAGE = '/images/salon/salon-entrance.webp';
 
 export const AccessPage: React.FC = () => {
   return (
@@ -26,8 +26,8 @@ export const AccessPage: React.FC = () => {
             <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
               <img
                 src={EXTERIOR_IMAGE}
-                width={2048}
-                height={1152}
+                width={1600}
+                height={900}
                 alt="Ri Beauty Spa Kawasakiのロゴを掲げたガラス張りの入口と、脇に置かれた案内看板"
                 className="w-full h-full object-cover"
               />

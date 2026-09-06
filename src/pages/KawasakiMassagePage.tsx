@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
-const HERO_IMAGE = '/images/salon/treatment-room-twin.jpg';
-const LEG_IMAGE = '/images/salon/leg-massage.jpg';
+const HERO_IMAGE = '/images/salon/treatment-room-twin.webp';
+const LEG_IMAGE = '/images/salon/leg-massage.webp';
 
 export const KawasakiMassagePage: React.FC = () => {
   return (
@@ -153,8 +153,8 @@ export const KawasakiMassagePage: React.FC = () => {
                 <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
                   <img
                     src={LEG_IMAGE}
-                    width={2048}
-                    height={1152}
+                    width={1600}
+                    height={900}
                     loading="lazy"
                     alt="仰向けの状態で、施術者が両手でふくらはぎを下から上へ包み込むようにたどっている様子"
                     className="w-full h-full object-cover"
