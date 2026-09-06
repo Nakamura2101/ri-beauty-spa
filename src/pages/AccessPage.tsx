@@ -1,6 +1,8 @@
 import React from 'react';
 import { Seo } from '../components/Seo';
 
+const EXTERIOR_IMAGE = '/images/salon/salon-entrance.jpg';
+
 export const AccessPage: React.FC = () => {
   return (
     <>
@@ -19,6 +21,21 @@ export const AccessPage: React.FC = () => {
             </p>
             <div className="w-12 h-px bg-spa-green/20 mx-auto mt-8" />
           </header>
+
+          <figure className="max-w-3xl mx-auto mb-10">
+            <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+              <img
+                src={EXTERIOR_IMAGE}
+                width={2048}
+                height={1152}
+                alt="Ri Beauty Spa Kawasakiのロゴを掲げたガラス張りの入口と、脇に置かれた案内看板"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+              ガラス張りの入口が目印です。案内看板を置いています。
+            </figcaption>
+          </figure>
 
           <section className="max-w-3xl mx-auto space-y-8">
             <div className="bg-white border border-gray-100 shadow-sm p-8 rounded-sm">

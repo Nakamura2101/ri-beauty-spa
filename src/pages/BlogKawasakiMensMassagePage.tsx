@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
+const HERO_IMAGE = '/images/salon/reception-lounge.jpg';
+const ROOM_IMAGE = '/images/salon/treatment-room-warm.jpg';
+const UPPER_BODY_IMAGE = '/images/salon/shoulder-back-massage.jpg';
+
 export const BlogKawasakiMensMassagePage: React.FC = () => {
   return (
     <>
@@ -85,6 +89,21 @@ export const BlogKawasakiMensMassagePage: React.FC = () => {
             </p>
           </header>
 
+          <figure className="mb-16">
+            <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+              <img
+                src={HERO_IMAGE}
+                width={2048}
+                height={1152}
+                alt="観葉植物とキャンドルを置いたテーブルの横に、クッションを並べたソファがある待合スペース"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+              ご来店後は、待合スペースで少し落ち着いてからご案内します。
+            </figcaption>
+          </figure>
+
           <section className="space-y-10 text-[17px] leading-relaxed">
             <section className="space-y-5">
               <a
@@ -108,6 +127,21 @@ export const BlogKawasakiMensMassagePage: React.FC = () => {
                 <li>目的に合わせて選べる（短時間で回復したい／全身をゆっくり整えたい）</li>
                 <li>仕事帰りでも行ける（時間帯・アクセスの相性）</li>
               </ul>
+              <figure className="pt-2 max-w-3xl mx-auto">
+                <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+                  <img
+                    src={ROOM_IMAGE}
+                    width={2048}
+                    height={1152}
+                    loading="lazy"
+                    alt="間接照明を落とした個室に、タオルを整えた施術ベッドが2台並んでいる様子"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+                  照明を落とした個室で、静かに過ごしていただけます。
+                </figcaption>
+              </figure>
             </section>
 
             <section className="space-y-4">
@@ -120,6 +154,21 @@ export const BlogKawasakiMensMassagePage: React.FC = () => {
               <p className="text-gray-700">
                 迷う場合は、予約時に「上半身がつらい」「全身がだるい」など一言添えるとスムーズです。
               </p>
+              <figure className="pt-2 max-w-3xl mx-auto">
+                <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+                  <img
+                    src={UPPER_BODY_IMAGE}
+                    width={2048}
+                    height={1152}
+                    loading="lazy"
+                    alt="うつ伏せの状態で、施術者が首の付け根から肩にかけて両手でゆっくり圧をかけている様子"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+                  デスクワークで重くなりやすい首・肩まわりを中心に。
+                </figcaption>
+              </figure>
             </section>
 
             <section className="space-y-4">

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
+const HERO_IMAGE = '/images/salon/treatment-room-twin.jpg';
+const LEG_IMAGE = '/images/salon/leg-massage.jpg';
+
 export const KawasakiMassagePage: React.FC = () => {
   return (
     <>
@@ -114,6 +117,21 @@ export const KawasakiMassagePage: React.FC = () => {
             </a>
           </header>
 
+          <figure className="mb-16 md:mb-20">
+            <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+              <img
+                src={HERO_IMAGE}
+                width={2048}
+                height={1152}
+                alt="観葉植物のそばに、タオルを花の形にたたんで置いた施術ベッドが2台並ぶ川崎の店舗の個室"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+              川崎市幸区の店舗。落ち着いた個室でご案内しています。
+            </figcaption>
+          </figure>
+
           <section className="space-y-14 md:space-y-16">
             <section className="space-y-7">
               <h2 className="text-2xl md:text-3xl font-serif tracking-wide">お疲れ別｜おすすめ</h2>
@@ -131,6 +149,21 @@ export const KawasakiMassagePage: React.FC = () => {
                   <p className="text-gray-700 leading-relaxed">深呼吸しやすい状態へ。リラックス重視で全身をやさしく整えます。</p>
                 </article>
               </div>
+              <figure className="pt-2 max-w-3xl mx-auto">
+                <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+                  <img
+                    src={LEG_IMAGE}
+                    width={2048}
+                    height={1152}
+                    loading="lazy"
+                    alt="仰向けの状態で、施術者が両手でふくらはぎを下から上へ包み込むようにたどっている様子"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+                  脚まわりは、ふくらはぎから上へゆっくりたどります。
+                </figcaption>
+              </figure>
               <p className="text-gray-700 leading-relaxed">
                 迷う場合は、予約時に「肩がつらい」「全身が重い」など一言添えてください。
               </p>

@@ -5,6 +5,7 @@ import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
 // Representative image for this article (also rendered in the page body).
 const HERO_IMAGE = '/images/herbal/YomogiSteaming.jpg';
+const INTERIOR_IMAGE = '/images/salon/interior-detail-candle.jpg';
 
 // Dates are sourced from git history for this article, not from build time.
 // datePublished: commit f871112 (initial publication of this post).
@@ -166,6 +167,21 @@ export const BlogKawasakiYomogiSteamPage: React.FC = () => {
                 </Link>
                 もあわせてご覧ください。
               </p>
+              <figure className="pt-2 max-w-xs mx-auto">
+                <div className="aspect-[9/16] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+                  <img
+                    src={INTERIOR_IMAGE}
+                    width={1152}
+                    height={2048}
+                    loading="lazy"
+                    alt="ドライフラワーを生けた花瓶と、やわらかな光をともすキャンドルを置いた店内の一角"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+                  温まったあとは、静かな空間でゆっくりお過ごしください。
+                </figcaption>
+              </figure>
             </section>
 
             <section className="space-y-4">

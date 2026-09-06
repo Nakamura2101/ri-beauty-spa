@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
+const HERO_IMAGE = '/images/salon/back-massage.jpg';
+const SHOULDER_IMAGE = '/images/salon/shoulder-massage.jpg';
+const ROOM_IMAGE = '/images/salon/treatment-room-single.jpg';
+
 export const BlogVietnameseMassagePage: React.FC = () => {
   return (
     <>
@@ -59,6 +63,21 @@ export const BlogVietnameseMassagePage: React.FC = () => {
             </p>
           </header>
 
+          <figure className="mb-16">
+            <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+              <img
+                src={HERO_IMAGE}
+                width={2048}
+                height={1152}
+                alt="うつ伏せの背中に、施術者が両手のひらを重ねるようにあてて背骨の両側をたどっている様子"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+              背中から腰まわりへ、面でとらえるようにゆっくりたどります。
+            </figcaption>
+          </figure>
+
           <section className="space-y-10 text-[17px] leading-relaxed">
             <section className="space-y-4">
               <h2 className="text-2xl font-serif tracking-wide">ベトナム式マッサージの特徴</h2>
@@ -67,6 +86,21 @@ export const BlogVietnameseMassagePage: React.FC = () => {
                 <li>首・肩・背中・腰など、疲れが出やすい部位に合わせた施術設計</li>
                 <li>施術後に「軽さ」を感じやすい穏やかなリラクゼーションアプローチ</li>
               </ul>
+              <figure className="pt-2 max-w-3xl mx-auto">
+                <div className="aspect-[16/9] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+                  <img
+                    src={SHOULDER_IMAGE}
+                    width={2048}
+                    height={1152}
+                    loading="lazy"
+                    alt="うつ伏せの方の首から肩にかけて、施術者が両手で肩の付け根を包み込むようにほぐしている様子"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+                  首から肩の付け根は、圧を確かめながら進めます。
+                </figcaption>
+              </figure>
             </section>
 
             <section className="space-y-4">
@@ -76,6 +110,21 @@ export const BlogVietnameseMassagePage: React.FC = () => {
                 <li>我慢せず、施術中に強さを微調整してもらう</li>
                 <li>終了後は水分補給をして、ゆったり過ごす</li>
               </ul>
+              <figure className="pt-2 max-w-xs mx-auto">
+                <div className="aspect-[9/16] overflow-hidden rounded-sm border border-gray-100 shadow-sm bg-white">
+                  <img
+                    src={ROOM_IMAGE}
+                    width={1152}
+                    height={2048}
+                    loading="lazy"
+                    alt="施術ベッドにタオルを花の形にたたんで置いた、川崎の店舗の個室の様子"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[13px] text-gray-500 text-center">
+                  施術は個室でご案内しています。
+                </figcaption>
+              </figure>
             </section>
 
             <section className="space-y-4">
