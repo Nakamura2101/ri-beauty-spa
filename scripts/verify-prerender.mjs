@@ -140,6 +140,16 @@ const routes = [
     },
   },
   {
+    route: '/blog/kawasaki-neck-shoulder-relaxation/',
+    file: path.join(DIST_DIR, 'blog', 'kawasaki-neck-shoulder-relaxation', 'index.html'),
+    mustIncludeAny: ['<h1', '首・肩', '川崎', 'FAQ'],
+    canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-neck-shoulder-relaxation/',
+    article: {
+      ogType: 'article',
+      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
+    },
+  },
+  {
     route: '/kawasaki-massage/',
     file: path.join(DIST_DIR, 'kawasaki-massage', 'index.html'),
     mustIncludeAny: ['<h1', '川崎', 'マッサージ', '予約'],

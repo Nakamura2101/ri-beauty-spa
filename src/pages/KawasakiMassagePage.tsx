@@ -272,6 +272,12 @@ export const KawasakiMassagePage: React.FC = () => {
                 >
                   川崎のアロマリンパマッサージを読む
                 </Link>
+                <Link
+                  to="/blog/kawasaki-neck-shoulder-relaxation/"
+                  className="inline-block px-6 py-3 bg-white border border-gray-100 shadow-sm rounded-sm text-[11px] uppercase tracking-[0.25em] font-bold hover:opacity-70"
+                >
+                  川崎の首・肩ケアの選び方を読む
+                </Link>
               </div>
             </section>
           </section>

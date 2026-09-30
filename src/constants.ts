@@ -72,6 +72,12 @@ export const NAV_ITEMS = [
         labelJp: '川崎フェイシャル',
         href: '/blog/kawasaki-facial-guide/',
       },
+      {
+        id: 'blog-kawasaki-neck-shoulder',
+        labelEn: 'KAWASAKI NECK & SHOULDER',
+        labelJp: '川崎の首・肩ケア',
+        href: '/blog/kawasaki-neck-shoulder-relaxation/',
+      },
     ],
   },
 ];

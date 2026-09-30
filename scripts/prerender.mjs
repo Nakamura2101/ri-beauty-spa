@@ -32,6 +32,7 @@ const REQUIRED_ROUTES = [
   '/blog/kawasaki-herbal-peel/',
   '/blog/kawasaki-aroma-lymphatic-massage/',
   '/blog/kawasaki-facial-guide/',
+  '/blog/kawasaki-neck-shoulder-relaxation/',
   '/kawasaki-massage/',
 ];
 
