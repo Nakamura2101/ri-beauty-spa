@@ -3,9 +3,16 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
+// Representative image for this article (also rendered in the page body).
 const HERO_IMAGE = '/images/salon/reception-lounge.webp';
 const ROOM_IMAGE = '/images/salon/treatment-room-warm.webp';
 const UPPER_BODY_IMAGE = '/images/salon/shoulder-back-massage.webp';
+
+// Dates come from this article's real git history, not the build clock.
+// datePublished: initial publication of this post.
+const DATE_PUBLISHED = '2026-03-13T22:27:45+09:00';
+// dateModified: last real change to the article (body images were updated).
+const DATE_MODIFIED = '2026-09-06T22:23:39+09:00';
 
 export const BlogKawasakiMensMassagePage: React.FC = () => {
   return (
@@ -14,6 +21,8 @@ export const BlogKawasakiMensMassagePage: React.FC = () => {
         title="川崎でメンズ向けマッサージを探す方へ｜男性が通いやすい選び方・予約のポイント"
         description="川崎でメンズ向けマッサージを探している方へ。初めてでも通いやすい選び方、予約前チェック、当日の流れをわかりやすく解説。WEB予約はこちら。"
         canonicalPath="/blog/kawasaki-mens-massage/"
+        image={HERO_IMAGE}
+        ogType="article"
         structuredData={[
           {
             '@type': 'BlogPosting',
@@ -21,6 +30,14 @@ export const BlogKawasakiMensMassagePage: React.FC = () => {
             description:
               '川崎でメンズ向けマッサージを探している方へ。初めてでも通いやすい選び方、予約前チェック、当日の流れをわかりやすく解説。WEB予約はこちら。',
             mainEntityOfPage: `${SITE_ORIGIN}/blog/kawasaki-mens-massage/`,
+            image: {
+              '@type': 'ImageObject',
+              url: `${SITE_ORIGIN}${HERO_IMAGE}`,
+              width: 2048,
+              height: 1152,
+            },
+            datePublished: DATE_PUBLISHED,
+            dateModified: DATE_MODIFIED,
             author: {
               '@type': 'Organization',
               name: 'Ri Beauty Spa & Wellness',

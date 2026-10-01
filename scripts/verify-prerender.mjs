@@ -4,6 +4,20 @@ import path from 'node:path';
 const PROJECT_ROOT = process.cwd();
 const DIST_DIR = path.resolve(PROJECT_ROOT, 'dist');
 
+/**
+ * The contract every blog post has to meet: og:type=article, a representative
+ * social image (not the generic site logo), a complete BlogPosting, and - when
+ * the page renders a visible FAQ - a FAQPage whose question and answer text
+ * matches that visible FAQ word for word.
+ *
+ * All 8 posts share it, so a new post cannot quietly ship with less metadata
+ * than the one before it.
+ */
+const ARTICLE_CONTRACT = {
+  ogType: 'article',
+  requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
+};
+
 const routes = [
   {
     route: '/',
@@ -84,70 +98,56 @@ const routes = [
     file: path.join(DIST_DIR, 'blog', 'vietnamese-massage-kawasaki', 'index.html'),
     mustIncludeAny: ['<h1', 'ベトナム式マッサージ', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/vietnamese-massage-kawasaki/',
+    article: ARTICLE_CONTRACT,
   },
   {
     route: '/blog/kawasaki-massage-guide/',
     file: path.join(DIST_DIR, 'blog', 'kawasaki-massage-guide', 'index.html'),
     mustIncludeAny: ['<h1', '川崎', 'マッサージ', 'ポイント'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-massage-guide/',
+    article: ARTICLE_CONTRACT,
   },
   {
     route: '/blog/kawasaki-mens-massage/',
     file: path.join(DIST_DIR, 'blog', 'kawasaki-mens-massage', 'index.html'),
     mustIncludeAny: ['<h1', 'メンズ', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-mens-massage/',
+    article: ARTICLE_CONTRACT,
   },
   {
     route: '/blog/kawasaki-yomogi-steam/',
     file: path.join(DIST_DIR, 'blog', 'kawasaki-yomogi-steam', 'index.html'),
     mustIncludeAny: ['<h1', 'よもぎ蒸し', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-yomogi-steam/',
-    article: {
-      // Article pages must ship a complete BlogPosting and a representative
-      // social image (not the generic site logo).
-      ogType: 'article',
-      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
-    },
+    article: ARTICLE_CONTRACT,
   },
   {
     route: '/blog/kawasaki-herbal-peel/',
     file: path.join(DIST_DIR, 'blog', 'kawasaki-herbal-peel', 'index.html'),
     mustIncludeAny: ['<h1', 'ハーブピーリング', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-herbal-peel/',
-    article: {
-      ogType: 'article',
-      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
-    },
+    article: ARTICLE_CONTRACT,
   },
   {
     route: '/blog/kawasaki-aroma-lymphatic-massage/',
     file: path.join(DIST_DIR, 'blog', 'kawasaki-aroma-lymphatic-massage', 'index.html'),
     mustIncludeAny: ['<h1', 'アロマリンパ', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-aroma-lymphatic-massage/',
-    article: {
-      ogType: 'article',
-      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
-    },
+    article: ARTICLE_CONTRACT,
   },
   {
     route: '/blog/kawasaki-facial-guide/',
     file: path.join(DIST_DIR, 'blog', 'kawasaki-facial-guide', 'index.html'),
     mustIncludeAny: ['<h1', 'フェイシャル', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-facial-guide/',
-    article: {
-      ogType: 'article',
-      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
-    },
+    article: ARTICLE_CONTRACT,
   },
   {
     route: '/blog/kawasaki-neck-shoulder-relaxation/',
     file: path.join(DIST_DIR, 'blog', 'kawasaki-neck-shoulder-relaxation', 'index.html'),
     mustIncludeAny: ['<h1', '首・肩', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-neck-shoulder-relaxation/',
-    article: {
-      ogType: 'article',
-      requiredBlogPostingFields: ['headline', 'description', 'image', 'datePublished', 'dateModified', 'author', 'publisher'],
-    },
+    article: ARTICLE_CONTRACT,
   },
   {
     route: '/kawasaki-massage/',
@@ -171,6 +171,35 @@ const exists = async (p) => {
   } catch {
     return false;
   }
+};
+
+const decodeEntities = (s) =>
+  s
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&');
+
+/**
+ * The Q&A pairs a blog post actually renders, in page order. Every post writes
+ * its FAQ the same way:
+ *
+ *   <p><strong>Q. question</strong><br>A. answer</p>
+ *
+ * so the visible text can be compared with the FAQPage data directly.
+ */
+const extractVisibleFaq = (html) => {
+  const items = [];
+  const re = /<strong>Q\.\s*([\s\S]*?)<\/strong>\s*<br\s*\/?>\s*A\.\s*([\s\S]*?)<\/p>/gi;
+  for (const m of html.matchAll(re)) {
+    items.push({
+      question: decodeEntities(m[1]).replace(/<[^>]*>/g, '').trim(),
+      answer: decodeEntities(m[2]).replace(/<[^>]*>/g, '').trim(),
+    });
+  }
+  return items;
 };
 
 /* ------------------------------------------------------------------------- *
@@ -513,12 +542,50 @@ const main = async () => {
 
       const jsonLdRaw = html.match(/<script[^>]*id="seo-jsonld"[^>]*>([\s\S]*?)<\/script>/i)?.[1];
       let blogPosting = null;
+      let faqPage = null;
       try {
         const parsed = JSON.parse(jsonLdRaw ?? 'null');
         const nodes = Array.isArray(parsed?.['@graph']) ? parsed['@graph'] : [parsed];
         blogPosting = nodes.find((n) => n?.['@type'] === 'BlogPosting') ?? null;
+        faqPage = nodes.find((n) => n?.['@type'] === 'FAQPage') ?? null;
       } catch {
         fail(`${r.route} JSON-LD is not valid JSON`);
+      }
+
+      // A rendered FAQ must be mirrored by FAQPage data that says the same
+      // thing: structured data that drifts from the visible answers is worse
+      // than none at all.
+      const visibleFaq = extractVisibleFaq(html);
+      if (visibleFaq.length && !faqPage) {
+        fail(`${r.route} renders ${visibleFaq.length} visible FAQ item(s) but has no FAQPage JSON-LD`);
+      } else if (visibleFaq.length && faqPage) {
+        const schemaFaq = [faqPage.mainEntity].flat().filter(Boolean).map((q) => ({
+          question: String(q?.name ?? ''),
+          answer: String(q?.acceptedAnswer?.text ?? ''),
+        }));
+
+        if (schemaFaq.length !== visibleFaq.length) {
+          fail(
+            `${r.route} FAQPage has ${schemaFaq.length} question(s) but the page renders ${visibleFaq.length}`
+          );
+        }
+
+        visibleFaq.forEach((visible, i) => {
+          const schema = schemaFaq[i];
+          if (!schema) return; // count mismatch already reported
+          if (schema.question !== visible.question) {
+            fail(
+              `${r.route} FAQPage question #${i + 1} does not match the visible FAQ.\n` +
+                `    visible: ${visible.question}\n    schema : ${schema.question}`
+            );
+          }
+          if (schema.answer !== visible.answer) {
+            fail(
+              `${r.route} FAQPage answer #${i + 1} does not match the visible FAQ.\n` +
+                `    visible: ${visible.answer}\n    schema : ${schema.answer}`
+            );
+          }
+        });
       }
 
       if (!blogPosting) {

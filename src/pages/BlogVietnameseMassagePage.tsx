@@ -3,9 +3,16 @@ import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
 
+// Representative image for this article (also rendered in the page body).
 const HERO_IMAGE = '/images/salon/back-massage.webp';
 const SHOULDER_IMAGE = '/images/salon/shoulder-massage.webp';
 const ROOM_IMAGE = '/images/salon/treatment-room-single.webp';
+
+// Dates come from this article's real git history, not the build clock.
+// datePublished: initial publication of this post.
+const DATE_PUBLISHED = '2026-03-02T21:58:54+09:00';
+// dateModified: last real change to the article (body images were updated).
+const DATE_MODIFIED = '2026-09-06T22:23:39+09:00';
 
 export const BlogVietnameseMassagePage: React.FC = () => {
   return (
@@ -14,39 +21,80 @@ export const BlogVietnameseMassagePage: React.FC = () => {
         title="川崎でベトナム式マッサージを受けるなら？特徴・リラクゼーション効果・初めての選び方"
         description="川崎でベトナム式マッサージをお探しの方へ。ベトナム伝統の手技の特徴、一般的なリラクゼーション効果、初めての方に向けた選び方や受け方をわかりやすく紹介します。"
         canonicalPath="/blog/vietnamese-massage-kawasaki/"
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@type': 'BlogPosting',
-          headline: '川崎でベトナム式マッサージを受けるなら？特徴・リラクゼーション効果・初めての選び方',
-          description:
-            '川崎でベトナム式マッサージをお探しの方へ。ベトナム伝統の手技の特徴、一般的なリラクゼーション効果、初めての方に向けた選び方や受け方をわかりやすく紹介します。',
-          mainEntityOfPage: `${SITE_ORIGIN}/blog/vietnamese-massage-kawasaki/`,
-          author: {
-            '@type': 'Organization',
-            name: 'Ri Beauty Spa & Wellness',
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Ri Beauty Spa & Wellness',
-            logo: {
+        image={HERO_IMAGE}
+        ogType="article"
+        structuredData={[
+          {
+            '@type': 'BlogPosting',
+            headline: '川崎でベトナム式マッサージを受けるなら？特徴・リラクゼーション効果・初めての選び方',
+            description:
+              '川崎でベトナム式マッサージをお探しの方へ。ベトナム伝統の手技の特徴、一般的なリラクゼーション効果、初めての方に向けた選び方や受け方をわかりやすく紹介します。',
+            mainEntityOfPage: `${SITE_ORIGIN}/blog/vietnamese-massage-kawasaki/`,
+            image: {
               '@type': 'ImageObject',
-              url: `${SITE_ORIGIN}/images/logo.png`,
+              url: `${SITE_ORIGIN}${HERO_IMAGE}`,
+              width: 2048,
+              height: 1152,
+            },
+            datePublished: DATE_PUBLISHED,
+            dateModified: DATE_MODIFIED,
+            author: {
+              '@type': 'Organization',
+              name: 'Ri Beauty Spa & Wellness',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Ri Beauty Spa & Wellness',
+              logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_ORIGIN}/images/logo.png`,
+              },
+            },
+            breadcrumb: {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_ORIGIN}/` },
+                { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_ORIGIN}/services/` },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: 'Vietnamese Massage Guide',
+                  item: `${SITE_ORIGIN}/blog/vietnamese-massage-kawasaki/`,
+                },
+              ],
             },
           },
-          breadcrumb: {
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_ORIGIN}/` },
-              { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_ORIGIN}/services/` },
+          {
+            // Mirrors the visible FAQ below, word for word.
+            '@type': 'FAQPage',
+            mainEntity: [
               {
-                '@type': 'ListItem',
-                position: 3,
-                name: 'Vietnamese Massage Guide',
-                item: `${SITE_ORIGIN}/blog/vietnamese-massage-kawasaki/`,
+                '@type': 'Question',
+                name: '痛い施術ですか？',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: '強さは調整できます。心地よさを優先して受けるのがおすすめです。',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'どのくらいの頻度で受けるのがおすすめですか？',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'ライフスタイルやお疲れの感じ方に合わせて、無理のないペースで取り入れる方が多いです。気になる方は来店時にご相談ください。',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: '男性でも利用できますか？',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: '店舗の利用条件に沿ってご案内しています。ご予約時にお気軽にお問い合わせください。',
+                },
               },
             ],
           },
-        }}
+        ]}
       />
 
       <main className="pt-32 pb-24 bg-[#fdfdfb] text-black">

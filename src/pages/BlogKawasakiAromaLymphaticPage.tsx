@@ -29,36 +29,67 @@ export const BlogKawasakiAromaLymphaticPage: React.FC = () => {
         canonicalPath="/blog/kawasaki-aroma-lymphatic-massage/"
         image={HERO_IMAGE}
         ogType="article"
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@type': 'BlogPosting',
-          headline: TITLE,
-          description: DESCRIPTION,
-          mainEntityOfPage: `${SITE_ORIGIN}/blog/kawasaki-aroma-lymphatic-massage/`,
-          image: {
-            '@type': 'ImageObject',
-            url: `${SITE_ORIGIN}${HERO_IMAGE}`,
-            width: 2048,
-            height: 1152,
-          },
-          datePublished: DATE_PUBLISHED,
-          dateModified: DATE_MODIFIED,
-          inLanguage: 'ja-JP',
-          author: {
-            '@type': 'Organization',
-            name: 'Ri Beauty Spa & Wellness',
-            url: `${SITE_ORIGIN}/`,
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Ri Beauty Spa & Wellness',
-            url: `${SITE_ORIGIN}/`,
-            logo: {
+        structuredData={[
+          {
+            '@type': 'BlogPosting',
+            headline: TITLE,
+            description: DESCRIPTION,
+            mainEntityOfPage: `${SITE_ORIGIN}/blog/kawasaki-aroma-lymphatic-massage/`,
+            image: {
               '@type': 'ImageObject',
-              url: `${SITE_ORIGIN}/images/logo.png`,
+              url: `${SITE_ORIGIN}${HERO_IMAGE}`,
+              width: 2048,
+              height: 1152,
+            },
+            datePublished: DATE_PUBLISHED,
+            dateModified: DATE_MODIFIED,
+            inLanguage: 'ja-JP',
+            author: {
+              '@type': 'Organization',
+              name: 'Ri Beauty Spa & Wellness',
+              url: `${SITE_ORIGIN}/`,
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Ri Beauty Spa & Wellness',
+              url: `${SITE_ORIGIN}/`,
+              logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_ORIGIN}/images/logo.png`,
+              },
             },
           },
-        }}
+          {
+            // Mirrors the visible FAQ below, word for word.
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'ほぐし系のマッサージとは何が違いますか？',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'オイルを使い、手のひら全体でゆっくりたどる手技が中心です。一点ずつ押してほしい場合は、指圧系のボディケアをご案内します。',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: '香りは選べますか？',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'はい。その日の気分をうかがいながらお選びいただけます。苦手な香りがある方は、事前にお知らせください。',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: '施術後、オイルのべたつきは残りますか？',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: '最後に余分なオイルを拭き取ります。このあとの予定が気になる場合は、当日お伝えください。',
+                },
+              },
+            ],
+          },
+        ]}
       />
 
       <main className="pt-32 pb-24 bg-[#fdfdfb] text-black">
