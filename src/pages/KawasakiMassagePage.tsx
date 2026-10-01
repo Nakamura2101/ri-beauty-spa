@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Seo } from '../components/Seo';
-import { SITE_ORIGIN, SQUARE_BOOKING_LINK } from '../constants';
+import {
+  BUSINESS_ADDRESS,
+  BUSINESS_GEO,
+  BUSINESS_ID,
+  BUSINESS_NAME,
+  BUSINESS_PHONE,
+  SITE_ORIGIN,
+  SQUARE_BOOKING_LINK,
+} from '../constants';
 
 const HERO_IMAGE = '/images/salon/treatment-room-twin.webp';
 const LEG_IMAGE = '/images/salon/leg-massage.webp';
@@ -22,31 +30,21 @@ export const KawasakiMassagePage: React.FC = () => {
             ],
           },
           {
+            // Same @id as the site-wide DaySpa node in index.html: one business,
+            // one set of NAP values, described from the page it is most relevant to.
             '@type': 'LocalBusiness',
-            name: 'Ri Beauty Spa & Wellness',
-            url: `${SITE_ORIGIN}/kawasaki-massage/`,
-            telephone: '[PHONE]',
+            '@id': BUSINESS_ID,
+            name: BUSINESS_NAME,
+            url: `${SITE_ORIGIN}/`,
+            telephone: BUSINESS_PHONE,
             address: {
               '@type': 'PostalAddress',
-              streetAddress: '南幸町2-10-12-101',
-              addressLocality: '川崎市幸区',
-              addressRegion: '神奈川県',
-              postalCode: '212-0016',
-              addressCountry: 'JP',
+              ...BUSINESS_ADDRESS,
             },
             geo: {
               '@type': 'GeoCoordinates',
-              latitude: '[LAT]',
-              longitude: '[LNG]',
+              ...BUSINESS_GEO,
             },
-            openingHoursSpecification: [
-              {
-                '@type': 'OpeningHoursSpecification',
-                dayOfWeek: '[OPENING_HOURS_DAY_OF_WEEK]',
-                opens: '[OPENING_HOURS_OPEN]',
-                closes: '[OPENING_HOURS_CLOSE]',
-              },
-            ],
           },
           {
             '@type': 'FAQPage',

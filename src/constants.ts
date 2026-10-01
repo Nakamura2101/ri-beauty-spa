@@ -7,6 +7,35 @@ export const SQUARE_BOOKING_LINK = "https://ribeautyspa.square.site/";
 export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/3J9Y9BoVDvfHbAcY7";
 export const LOGO_URL = "/images/logo.png";
 
+/**
+ * Canonical NAP for the salon, as published on the business's own Google
+ * Maps/Business Profile listing (GOOGLE_MAPS_LINK) and shown on /contact/ and
+ * /access/. Every structured-data entity describing the business must use these
+ * values so the site never states two different addresses or phone numbers.
+ *
+ * BUSINESS_ID is the single schema.org @id for that business: the static DaySpa
+ * node in index.html and the LocalBusiness node on /kawasaki-massage/ share it,
+ * so they describe one entity instead of two competing ones. index.html is plain
+ * HTML and cannot import this file - keep its JSON-LD block in sync by hand.
+ *
+ * Opening hours are deliberately absent: the listing exposes only the current
+ * day, so the weekly schedule is not verified and is better omitted than guessed.
+ */
+export const BUSINESS_ID = `${SITE_ORIGIN}/#day-spa`;
+export const BUSINESS_NAME = 'Ri Beauty Spa & Wellness';
+export const BUSINESS_PHONE = '070-4790-6868';
+export const BUSINESS_ADDRESS = {
+  postalCode: '212-0016',
+  addressRegion: '神奈川県',
+  addressLocality: '川崎市幸区',
+  streetAddress: '南幸町2-10-12-101',
+  addressCountry: 'JP',
+} as const;
+export const BUSINESS_GEO = {
+  latitude: '35.5333741',
+  longitude: '139.6915282',
+} as const;
+
 export const HERO_IMAGES = [
   "/images/home/home1.JPG",
   "/images/home/home2.JPG",
