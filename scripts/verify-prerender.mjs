@@ -10,7 +10,7 @@ const DIST_DIR = path.resolve(PROJECT_ROOT, 'dist');
  * the page renders a visible FAQ - a FAQPage whose question and answer text
  * matches that visible FAQ word for word.
  *
- * All 8 posts share it, so a new post cannot quietly ship with less metadata
+ * All 9 posts share it, so a new post cannot quietly ship with less metadata
  * than the one before it.
  */
 const ARTICLE_CONTRACT = {
@@ -147,6 +147,13 @@ const routes = [
     file: path.join(DIST_DIR, 'blog', 'kawasaki-neck-shoulder-relaxation', 'index.html'),
     mustIncludeAny: ['<h1', '首・肩', '川崎', 'FAQ'],
     canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-neck-shoulder-relaxation/',
+    article: ARTICLE_CONTRACT,
+  },
+  {
+    route: '/blog/kawasaki-leg-foot-relaxation/',
+    file: path.join(DIST_DIR, 'blog', 'kawasaki-leg-foot-relaxation', 'index.html'),
+    mustIncludeAny: ['<h1', '足・脚', '川崎', 'FAQ'],
+    canonical: 'https://www.ri-beauty-spa.com/blog/kawasaki-leg-foot-relaxation/',
     article: ARTICLE_CONTRACT,
   },
   {

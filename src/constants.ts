@@ -107,6 +107,12 @@ export const NAV_ITEMS = [
         labelJp: '川崎の首・肩ケア',
         href: '/blog/kawasaki-neck-shoulder-relaxation/',
       },
+      {
+        id: 'blog-kawasaki-leg-foot',
+        labelEn: 'KAWASAKI LEG & FOOT',
+        labelJp: '川崎の足・脚ケア',
+        href: '/blog/kawasaki-leg-foot-relaxation/',
+      },
     ],
   },
 ];

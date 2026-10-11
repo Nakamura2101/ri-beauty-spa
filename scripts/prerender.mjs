@@ -33,6 +33,7 @@ const REQUIRED_ROUTES = [
   '/blog/kawasaki-aroma-lymphatic-massage/',
   '/blog/kawasaki-facial-guide/',
   '/blog/kawasaki-neck-shoulder-relaxation/',
+  '/blog/kawasaki-leg-foot-relaxation/',
   '/kawasaki-massage/',
 ];
 
